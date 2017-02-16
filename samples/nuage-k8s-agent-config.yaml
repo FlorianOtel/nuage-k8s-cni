@@ -1,0 +1,9 @@
+nuage-k8s-agent-kubeconfig: ./nuage-k8s-agent.kubeconfig
+k8s-master-config: ""
+nuage-config:
+  vsd-url: https://172.16.254.7:7443
+  apiversion: v4_0
+  enterprise: K8S-Enterprise-5bis
+  domain: K8S-Domain-5bis
+  certFile: certlogin1.pem 
+  keyFile: certlogin1-Key.pem 
