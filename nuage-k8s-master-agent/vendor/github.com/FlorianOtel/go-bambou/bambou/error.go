@@ -34,7 +34,7 @@ type VsdErrorList struct {
 
 type VsdError struct {
 	Property     string  `json:"property"`
-	Descriptions []Error `json:"descriptions"`
+	Descriptions []Error `json:"descriptions"` // XXX -- note
 }
 
 // Errors at this level can be of two types: 1) Connection logic / setup errors (e.g. invalid credentials) 2) VSD error response.

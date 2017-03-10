@@ -1,6 +1,0 @@
-vrs-config: still-tbd-string
-nuage-config:
-  server-url: https://0.0.0.0:7443
-  ca: ca.crt
-  certFile: k8s-20161122-node1.crt 
-  keyFile: k8s-20161122-node1.key

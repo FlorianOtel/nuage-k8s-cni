@@ -11,7 +11,7 @@ import (
 	yaml "gopkg.in/yaml.v2"
 )
 
-// nuage-cni-k8s-master -- configuration file
+// nuage-k8s-cni-master -- configuration file
 type AgentConfig struct {
 
 	// Not supplied in YAML config file
@@ -95,8 +95,8 @@ func Flags(conf *AgentConfig, flagSet *flag.FlagSet) {
 	logtostderr.Value.Set("false")
 	logtostderr.DefValue = "false"
 	stderrlogthreshold := flagSet.Lookup("stderrthreshold")
-	stderrlogthreshold.Value.Set("3")
-	stderrlogthreshold.DefValue = "3"
+	stderrlogthreshold.Value.Set("2")
+	stderrlogthreshold.DefValue = "2"
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 }
 

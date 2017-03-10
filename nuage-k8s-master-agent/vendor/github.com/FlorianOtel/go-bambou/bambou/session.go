@@ -236,8 +236,6 @@ func (s *Session) send(request *http.Request, info *FetchingInfo) (*http.Respons
 		}
 
 	default:
-		body, _ := ioutil.ReadAll(response.Body)
-		log.Debugf("Response Body: %s", string(body))
 		return nil, NewBambouError("HTTP error", response.Status)
 	}
 }

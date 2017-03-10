@@ -1,12 +1,11 @@
 package main
 
 import (
-	"github.com/OpenPlatformSDN/nuage-cni-k8s/nuage-k8s-master-agent/config"
-	k8s "github.com/OpenPlatformSDN/nuage-cni-k8s/nuage-k8s-master-agent/kubernetes-client"
-	vsd "github.com/OpenPlatformSDN/nuage-cni-k8s/nuage-k8s-master-agent/vsd-client"
+	"github.com/OpenPlatformSDN/nuage-k8s-cni/nuage-k8s-master-agent/config"
+	k8s "github.com/OpenPlatformSDN/nuage-k8s-cni/nuage-k8s-master-agent/k8s-client"
+	vsd "github.com/OpenPlatformSDN/nuage-k8s-cni/nuage-k8s-master-agent/vsd-client"
 
 	"flag"
-	"fmt"
 	"os"
 	"path"
 
@@ -43,22 +42,21 @@ func main() {
 	defer glog.Flush()
 
 	glog.Infof("===> Starting %s...", path.Base(os.Args[0]))
-	glog.Infof("===> log_dir: %#v\n", *flag.CommandLine.Lookup("log_dir"))
 
 	if err := config.LoadAgentConfig(Config); err != nil {
-		glog.Fatalf("Cannot read configuration file: %s", err)
-
+		glog.Errorf("Cannot read configuration file: %s", err)
+		os.Exit(255)
 	}
-
-	fmt.Printf("===> Agent Configuration: %#v\n", *Config)
 
 	//// blocking etcd client here
 
 	if err := vsd.InitClient(Config); err != nil {
-		glog.Fatalf("VSD client error: %s", err)
+		glog.Errorf("VSD client error: %s", err)
+		os.Exit(255)
 	}
 	if err := k8s.InitClient(Config); err != nil {
-		glog.Fatalf("Kubernetes client error: %s", err)
+		glog.Errorf("Kubernetes client error: %s", err)
+		os.Exit(255)
 	}
 
 	go k8s.EventWatcher()
