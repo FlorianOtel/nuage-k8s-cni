@@ -48,7 +48,6 @@ type Unstructured struct {
 	Object map[string]interface{}
 }
 
-var _ metav1.Object = &Unstructured{}
 var _ runtime.Unstructured = &Unstructured{}
 var _ runtime.Unstructured = &UnstructuredList{}
 

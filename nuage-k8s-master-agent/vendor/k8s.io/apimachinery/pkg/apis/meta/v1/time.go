@@ -20,7 +20,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"k8s.io/apimachinery/pkg/openapi"
+	"k8s.io/apimachinery/pkg/genericapiserver/openapi/common"
 
 	"github.com/go-openapi/spec"
 	"github.com/google/gofuzz"
@@ -145,8 +145,8 @@ func (t Time) MarshalJSON() ([]byte, error) {
 	return json.Marshal(t.UTC().Format(time.RFC3339))
 }
 
-func (_ Time) OpenAPIDefinition() openapi.OpenAPIDefinition {
-	return openapi.OpenAPIDefinition{
+func (_ Time) OpenAPIDefinition() common.OpenAPIDefinition {
+	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
 				Type:   []string{"string"},

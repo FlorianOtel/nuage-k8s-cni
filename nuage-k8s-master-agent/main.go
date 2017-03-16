@@ -1,20 +1,16 @@
 package main
 
 import (
-	"github.com/OpenPlatformSDN/nuage-k8s-cni/nuage-k8s-master-agent/config"
-	k8s "github.com/OpenPlatformSDN/nuage-k8s-cni/nuage-k8s-master-agent/k8s-client"
-	vsd "github.com/OpenPlatformSDN/nuage-k8s-cni/nuage-k8s-master-agent/vsd-client"
-
 	"flag"
 	"os"
 	"path"
 
+	cniclient "github.com/OpenPlatformSDN/nuage-k8s-cni/nuage-k8s-master-agent/cni-agent-client"
+	"github.com/OpenPlatformSDN/nuage-k8s-cni/nuage-k8s-master-agent/config"
+	k8sclient "github.com/OpenPlatformSDN/nuage-k8s-cni/nuage-k8s-master-agent/k8s-client"
+	vsdclient "github.com/OpenPlatformSDN/nuage-k8s-cni/nuage-k8s-master-agent/vsd-client"
+
 	"github.com/golang/glog"
-	//
-	// apiv1 "k8s.io/kubernetes/pkg/api/v1"
-	// "k8s.io/kubernetes/pkg/apis/extensions"
-	// k8sfields "k8s.io/kubernetes/pkg/fields"
-	// k8slabels "k8s.io/kubernetes/pkg/labels"
 )
 
 const errorLogLevel = 2
@@ -49,17 +45,22 @@ func main() {
 	}
 
 	//// blocking etcd client here
-
-	if err := vsd.InitClient(Config); err != nil {
+	if err := vsdclient.InitClient(Config); err != nil {
 		glog.Errorf("VSD client error: %s", err)
 		os.Exit(255)
 	}
-	if err := k8s.InitClient(Config); err != nil {
+
+	if err := cniclient.InitClient(Config); err != nil {
+		glog.Errorf("CNI angent client error: %s", err)
+		os.Exit(255)
+	}
+
+	if err := k8sclient.InitClient(Config); err != nil {
 		glog.Errorf("Kubernetes client error: %s", err)
 		os.Exit(255)
 	}
 
-	go k8s.EventWatcher()
+	go k8sclient.EventWatcher()
 
 	select {}
 

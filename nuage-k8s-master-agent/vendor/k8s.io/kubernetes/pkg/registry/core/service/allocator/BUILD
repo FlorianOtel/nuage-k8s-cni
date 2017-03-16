@@ -26,7 +26,7 @@ go_test(
     ],
     library = ":go_default_library",
     tags = ["automanaged"],
-    deps = ["//vendor:k8s.io/apimachinery/pkg/util/sets"],
+    deps = ["//vendor:k8s.io/client-go/pkg/util/sets"],
 )
 
 filegroup(
@@ -40,7 +40,7 @@ filegroup(
     name = "all-srcs",
     srcs = [
         ":package-srcs",
-        "//pkg/registry/core/service/allocator/storage:all-srcs",
+        "//pkg/registry/core/service/allocator/etcd:all-srcs",
     ],
     tags = ["automanaged"],
 )

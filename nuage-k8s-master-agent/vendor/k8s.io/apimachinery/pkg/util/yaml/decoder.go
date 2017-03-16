@@ -69,10 +69,11 @@ func (d *YAMLToJSONDecoder) Decode(into interface{}) error {
 	}
 
 	if len(bytes) != 0 {
-		err := yaml.Unmarshal(bytes, into)
+		data, err := yaml.YAMLToJSON(bytes)
 		if err != nil {
-			return YAMLSyntaxError{err}
+			return err
 		}
+		return json.Unmarshal(data, into)
 	}
 	return err
 }
@@ -183,23 +184,6 @@ type YAMLOrJSONDecoder struct {
 	rawData []byte
 }
 
-type JSONSyntaxError struct {
-	Line int
-	Err  error
-}
-
-func (e JSONSyntaxError) Error() string {
-	return fmt.Sprintf("json: line %d: %s", e.Line, e.Err.Error())
-}
-
-type YAMLSyntaxError struct {
-	err error
-}
-
-func (e YAMLSyntaxError) Error() string {
-	return e.err.Error()
-}
-
 // NewYAMLOrJSONDecoder returns a decoder that will process YAML documents
 // or JSON documents from the given reader as a stream. bufferSize determines
 // how far into the stream the decoder will look to figure out whether this
@@ -242,10 +226,7 @@ func (d *YAMLOrJSONDecoder) Decode(into interface{}) error {
 
 			start := strings.LastIndex(js[:syntax.Offset], "\n") + 1
 			line := strings.Count(js[:start], "\n")
-			return JSONSyntaxError{
-				Line: line,
-				Err:  fmt.Errorf(syntax.Error()),
-			}
+			return fmt.Errorf("json: line %d: %s", line, syntax.Error())
 		}
 	}
 	return err

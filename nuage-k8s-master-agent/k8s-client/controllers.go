@@ -94,6 +94,7 @@ func CreateServiceController(c *kubernetes.Clientset, namespace string,
 // CreateNetworkPolicysController creates a controller specifically for NetworkPolicies.
 func CreateNetworkPolicyController(c *kubernetes.Clientset, namespace string,
 	addFunc func(addedObj *apiv1beta1.NetworkPolicy) error, deleteFunc func(deletedObj *apiv1beta1.NetworkPolicy) error, updateFunc func(oldObj, updatedObj *apiv1beta1.NetworkPolicy) error) (cache.Store, *cache.Controller) {
+
 	return CreateResourceController(c.Extensions().RESTClient(), "networkpolicies", namespace, &apiv1beta1.NetworkPolicy{}, fields.Everything(),
 		func(addedObj interface{}) {
 			if err := addFunc(addedObj.(*apiv1beta1.NetworkPolicy)); err != nil {
@@ -113,10 +114,27 @@ func CreateNetworkPolicyController(c *kubernetes.Clientset, namespace string,
 }
 
 // CreateNamespaceController creates a controller specifically for Namespaces.
-func CreateNamespaceController(c *kubernetes.Clientset,
+// XXX - If a given namespace name is specified, then we listen only for that namespace
+func CreateNamespaceController(c *kubernetes.Clientset, nsname string,
 	addFunc func(addedObj *apiv1.Namespace) error, deleteFunc func(deletedObj *apiv1.Namespace) error, updateFunc func(oldObj, updatedObj *apiv1.Namespace) error) (cache.Store, *cache.Controller) {
 
-	return CreateResourceController(c.Core().RESTClient(), "namespaces", "", &apiv1.Namespace{}, fields.Everything(),
+	var filter fields.Selector
+
+	// XXX - still TBD the format when we want to filter for a specific namespace name
+	/*
+		if nsname == "" {
+			filter = fields.Everything()
+		} else {
+			filter = fields.Set(map[string]string{
+				// XXX - Format ????
+				"ObjectMeta.name": nsname,
+			}).AsSelector()
+		}
+	*/
+
+	filter = fields.Everything()
+
+	return CreateResourceController(c.Core().RESTClient(), "namespaces", "", &apiv1.Namespace{}, filter,
 		func(addedObj interface{}) {
 			if err := addFunc(addedObj.(*apiv1.Namespace)); err != nil {
 				glog.Infof("Error while handling Add NameSpace: %s ", err)
