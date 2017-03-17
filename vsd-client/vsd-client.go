@@ -48,7 +48,7 @@ var (
 	mysession *bambou.Session
 
 	// K8S Master config -- includes network information and etcd client details
-	masterconfig config.MasterConfig
+	k8sMasterConfig config.MasterConfig
 
 	// Nuage Enterprise and Domain for this K8S cluster. Created if they don't exist already
 	Enterprise *vspk.Enterprise
@@ -66,7 +66,7 @@ var (
 )
 
 func InitClient(conf *config.AgentConfig) error {
-	if err := readnetconfig(conf); err != nil {
+	if err := readK8Sconfig(conf); err != nil {
 		return err
 	}
 
@@ -454,11 +454,11 @@ func ContainerIPandMask(container *vspk.Container) (string, string) {
 ////////
 
 ////  Load K8S Master configuration file -- NetworkingConfig and EtcdClientInfo
-func readnetconfig(conf *config.AgentConfig) error {
+func readK8Sconfig(conf *config.AgentConfig) error {
 	if data, err := ioutil.ReadFile(conf.MasterConfigFile); err != nil {
 		return bambou.NewBambouError("Cannot read K8S Master configuration file: "+conf.MasterConfigFile, err.Error())
 	} else {
-		if err := yaml.Unmarshal(data, &masterconfig); err != nil {
+		if err := yaml.Unmarshal(data, &k8sMasterConfig); err != nil {
 			return bambou.NewBambouError("Cannot parse K8S Master configuration file: "+conf.MasterConfigFile, err.Error())
 		}
 	}
@@ -491,16 +491,16 @@ func initCIDRs(conf *config.AgentConfig) error {
 	var err error
 	var ccidr *net.IPNet
 
-	if _, ccidr, err = net.ParseCIDR(masterconfig.NetworkConfig.ClusterCIDR); err != nil {
-		return bambou.NewBambouError("Cannot parse K8S cluster network configuration: "+masterconfig.NetworkConfig.ClusterCIDR, err.Error())
+	if _, ccidr, err = net.ParseCIDR(k8sMasterConfig.NetworkConfig.ClusterCIDR); err != nil {
+		return bambou.NewBambouError("Cannot parse K8S cluster network configuration: "+k8sMasterConfig.NetworkConfig.ClusterCIDR, err.Error())
 
 	}
-	glog.Infof("K8S master configuration: %#v", masterconfig)
+	glog.Infof("K8S master configuration: %#v", k8sMasterConfig)
 	glog.Infof("Pod cluster CIDR prefix: %s", ccidr.String())
 	cmask, _ := ccidr.Mask.Size() // Nr bits in the ClusterCIDR prefix mask
 
 	// The resulting subnet mask length for the Pod Subnets in the cluster
-	smask := uint(cmask + masterconfig.NetworkConfig.SubnetLength)
+	smask := uint(cmask + k8sMasterConfig.NetworkConfig.SubnetLength)
 
 	if smask >= 32 {
 		glog.Errorf("Invalid resulting subnet mask length for Pod networks: /%d", smask)
@@ -512,7 +512,7 @@ func initCIDRs(conf *config.AgentConfig) error {
 	////////
 	//////// Easiest way to generate the subnet prefixes is to convert them to/from int32 in "nr hosts per subnet" increments
 
-	for i := 0; i < 1<<uint(masterconfig.NetworkConfig.SubnetLength) && i < MAX_SUBNETS; i++ {
+	for i := 0; i < 1<<uint(k8sMasterConfig.NetworkConfig.SubnetLength) && i < MAX_SUBNETS; i++ {
 		newprefix := intToIP(ipToInt(ccidr.IP) + int32(i*(1<<(32-smask))))
 		FreeCIDRs[newprefix.String()] = &net.IPNet{newprefix, net.CIDRMask(int(smask), 32)}
 		// glog.Infof("=> Generated Subnet Prefix: %s", FreeCIDRs[newprefix.String()].String())

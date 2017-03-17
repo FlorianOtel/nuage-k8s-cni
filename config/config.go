@@ -72,7 +72,7 @@ func Flags(conf *AgentConfig, flagSet *flag.FlagSet) {
 	flagSet.StringVar(&conf.ConfigFile, "config",
 		"./nuage-k8s-master-agent-config.yaml", "configuration file for Nuage Kubernetes masters agent. If this file is specified, all remaining arguments will be ignored")
 	flagSet.StringVar(&conf.EtcdServerUrl, "etcd-server",
-		"", "etcd Server URL. If Kubernetes Master configuration file contains etcd client info, that information will be used instead")
+		"http://127.0.0.1:4001", "etcd Server URL. If Kubernetes Master configuration file contains etcd client info, that information will be used instead")
 	flagSet.StringVar(&conf.KubeConfigFile, "kubeconfig",
 		"./nuage-k8s-master-agent.kubeconfig", "kubeconfig file for Nuage Kuberenetes masters agent")
 	flagSet.StringVar(&conf.MasterConfigFile, "masterconfig",

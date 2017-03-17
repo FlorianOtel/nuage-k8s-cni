@@ -6,6 +6,8 @@ import (
 	"path"
 
 	cniclient "github.com/OpenPlatformSDN/nuage-k8s-cni/cni-agent-client"
+	etcdclient "github.com/OpenPlatformSDN/nuage-k8s-cni/etcd-client"
+
 	"github.com/OpenPlatformSDN/nuage-k8s-cni/config"
 	k8sclient "github.com/OpenPlatformSDN/nuage-k8s-cni/k8s-client"
 	vsdclient "github.com/OpenPlatformSDN/nuage-k8s-cni/vsd-client"
@@ -44,7 +46,15 @@ func main() {
 		os.Exit(255)
 	}
 
-	//// blocking etcd client here
+	if err := etcdclient.InitClient(Config); err != nil {
+		glog.Errorf("ETCD client error: %s", err)
+		os.Exit(255)
+	}
+
+	// XXX  -- This will block until we get a Leader lock from etcd
+
+	etcdclient.LeaderElection()
+
 	if err := vsdclient.InitClient(Config); err != nil {
 		glog.Errorf("VSD client error: %s", err)
 		os.Exit(255)
