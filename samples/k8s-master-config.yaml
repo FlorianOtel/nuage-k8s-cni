@@ -1,0 +1,4 @@
+networkConfig:
+  clusterNetworkCIDR: 10.254.0.0/16 
+  serviceNetworkCIDR: 192.168.3.0/24 
+  hostSubnetLength: 8
