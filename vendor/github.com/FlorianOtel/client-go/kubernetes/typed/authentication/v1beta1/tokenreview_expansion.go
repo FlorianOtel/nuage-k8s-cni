@@ -17,7 +17,7 @@ limitations under the License.
 package v1beta1
 
 import (
-	authenticationapi "github.com/FlorianOtel/client-go/pkg/apis/authentication/v1beta1"
+	authenticationapi "github.com/OpenPlatformSDN/client-go/pkg/apis/authentication/v1beta1"
 )
 
 type TokenReviewExpansion interface {

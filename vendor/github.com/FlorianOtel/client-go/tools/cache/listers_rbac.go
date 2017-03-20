@@ -17,9 +17,9 @@ limitations under the License.
 package cache
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/api/errors"
-	rbac "github.com/FlorianOtel/client-go/pkg/apis/rbac"
-	"github.com/FlorianOtel/client-go/pkg/labels"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/errors"
+	rbac "github.com/OpenPlatformSDN/client-go/pkg/apis/rbac"
+	"github.com/OpenPlatformSDN/client-go/pkg/labels"
 )
 
 //  TODO: generate these classes and methods for all resources of interest using

@@ -21,14 +21,14 @@ limitations under the License.
 package v1beta1
 
 import (
-	api "github.com/FlorianOtel/client-go/pkg/api"
-	api_v1 "github.com/FlorianOtel/client-go/pkg/api/v1"
-	autoscaling "github.com/FlorianOtel/client-go/pkg/apis/autoscaling"
-	extensions "github.com/FlorianOtel/client-go/pkg/apis/extensions"
-	v1 "github.com/FlorianOtel/client-go/pkg/apis/meta/v1"
-	conversion "github.com/FlorianOtel/client-go/pkg/conversion"
-	runtime "github.com/FlorianOtel/client-go/pkg/runtime"
-	intstr "github.com/FlorianOtel/client-go/pkg/util/intstr"
+	api "github.com/OpenPlatformSDN/client-go/pkg/api"
+	api_v1 "github.com/OpenPlatformSDN/client-go/pkg/api/v1"
+	autoscaling "github.com/OpenPlatformSDN/client-go/pkg/apis/autoscaling"
+	extensions "github.com/OpenPlatformSDN/client-go/pkg/apis/extensions"
+	v1 "github.com/OpenPlatformSDN/client-go/pkg/apis/meta/v1"
+	conversion "github.com/OpenPlatformSDN/client-go/pkg/conversion"
+	runtime "github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	intstr "github.com/OpenPlatformSDN/client-go/pkg/util/intstr"
 	unsafe "unsafe"
 )
 

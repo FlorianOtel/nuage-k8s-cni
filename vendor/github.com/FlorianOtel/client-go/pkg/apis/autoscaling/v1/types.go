@@ -17,8 +17,8 @@ limitations under the License.
 package v1
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/api/v1"
-	metav1 "github.com/FlorianOtel/client-go/pkg/apis/meta/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/v1"
+	metav1 "github.com/OpenPlatformSDN/client-go/pkg/apis/meta/v1"
 )
 
 // CrossVersionObjectReference contains enough information to let you identify the referred resource.

@@ -17,10 +17,10 @@ limitations under the License.
 package v1beta1
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/api/resource"
-	"github.com/FlorianOtel/client-go/pkg/api/v1"
-	metav1 "github.com/FlorianOtel/client-go/pkg/apis/meta/v1"
-	"github.com/FlorianOtel/client-go/pkg/util/intstr"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/resource"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/v1"
+	metav1 "github.com/OpenPlatformSDN/client-go/pkg/apis/meta/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/intstr"
 )
 
 // describes the attributes of a scale subresource

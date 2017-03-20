@@ -26,8 +26,8 @@ import (
 
 	"github.com/golang/glog"
 
-	"github.com/FlorianOtel/client-go/rest"
-	clientcmdapi "github.com/FlorianOtel/client-go/tools/clientcmd/api"
+	"github.com/OpenPlatformSDN/client-go/rest"
+	clientcmdapi "github.com/OpenPlatformSDN/client-go/tools/clientcmd/api"
 )
 
 // ConfigAccess is used by subcommands and methods in this package to load and modify the appropriate config files

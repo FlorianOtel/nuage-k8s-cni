@@ -26,11 +26,11 @@ import (
 
 	"github.com/golang/glog"
 
-	metav1 "github.com/FlorianOtel/client-go/pkg/apis/meta/v1"
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
-	"github.com/FlorianOtel/client-go/pkg/types"
-	"github.com/FlorianOtel/client-go/pkg/util/json"
+	metav1 "github.com/OpenPlatformSDN/client-go/pkg/apis/meta/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
+	"github.com/OpenPlatformSDN/client-go/pkg/types"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/json"
 )
 
 // Unstructured allows objects that do not have Golang structs registered to be manipulated

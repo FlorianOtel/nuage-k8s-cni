@@ -19,8 +19,8 @@ package watch
 import (
 	"sync"
 
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
 )
 
 // FullChannelBehavior controls how the Broadcaster reacts if a watcher's watch

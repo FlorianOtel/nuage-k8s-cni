@@ -17,7 +17,7 @@ limitations under the License.
 package v1beta1
 
 import (
-	rest "github.com/FlorianOtel/client-go/rest"
+	rest "github.com/OpenPlatformSDN/client-go/rest"
 )
 
 // LocalSubjectAccessReviewsGetter has a method to return a LocalSubjectAccessReviewInterface.

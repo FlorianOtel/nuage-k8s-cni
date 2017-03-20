@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/FlorianOtel/client-go/pkg/conversion"
-	"github.com/FlorianOtel/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/conversion"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
 )
 
 // IsListType returns true if the provided Object has a slice called Items

@@ -19,7 +19,7 @@ package watch
 import (
 	"time"
 
-	"github.com/FlorianOtel/client-go/pkg/util/wait"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/wait"
 )
 
 // ConditionFunc returns true if the condition has been reached, false if it has not been reached yet,

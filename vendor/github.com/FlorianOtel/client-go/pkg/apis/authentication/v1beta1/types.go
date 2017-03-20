@@ -19,8 +19,8 @@ package v1beta1
 import (
 	"fmt"
 
-	"github.com/FlorianOtel/client-go/pkg/api/v1"
-	metav1 "github.com/FlorianOtel/client-go/pkg/apis/meta/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/v1"
+	metav1 "github.com/OpenPlatformSDN/client-go/pkg/apis/meta/v1"
 )
 
 // +genclient=true

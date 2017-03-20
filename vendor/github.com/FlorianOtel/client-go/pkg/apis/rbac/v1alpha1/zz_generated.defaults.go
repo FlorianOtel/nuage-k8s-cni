@@ -21,7 +21,7 @@ limitations under the License.
 package v1alpha1
 
 import (
-	runtime "github.com/FlorianOtel/client-go/pkg/runtime"
+	runtime "github.com/OpenPlatformSDN/client-go/pkg/runtime"
 )
 
 // RegisterDefaults adds defaulters functions to the given scheme.

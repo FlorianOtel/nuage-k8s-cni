@@ -21,7 +21,7 @@ limitations under the License.
 package runtime
 
 import (
-	conversion "github.com/FlorianOtel/client-go/pkg/conversion"
+	conversion "github.com/OpenPlatformSDN/client-go/pkg/conversion"
 )
 
 func DeepCopy_runtime_RawExtension(in interface{}, out interface{}, c *conversion.Cloner) error {

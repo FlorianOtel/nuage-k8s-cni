@@ -19,7 +19,7 @@ package v1alpha1
 import (
 	"fmt"
 
-	"github.com/FlorianOtel/client-go/pkg/api/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/v1"
 )
 
 // +k8s:deepcopy-gen=false

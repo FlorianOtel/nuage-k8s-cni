@@ -21,12 +21,12 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/FlorianOtel/client-go/pkg/api"
-	"github.com/FlorianOtel/client-go/pkg/apis/extensions"
-	"github.com/FlorianOtel/client-go/pkg/conversion"
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	"github.com/FlorianOtel/client-go/pkg/util/validation/field"
-	"github.com/FlorianOtel/client-go/pkg/watch/versioned"
+	"github.com/OpenPlatformSDN/client-go/pkg/api"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/extensions"
+	"github.com/OpenPlatformSDN/client-go/pkg/conversion"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/validation/field"
+	"github.com/OpenPlatformSDN/client-go/pkg/watch/versioned"
 )
 
 const (

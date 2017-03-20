@@ -19,8 +19,8 @@ package discovery
 import (
 	"fmt"
 
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
 )
 
 // UnstructuredObjectTyper provides a runtime.ObjectTyper implmentation for

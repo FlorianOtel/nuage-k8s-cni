@@ -13,7 +13,7 @@ import (
 	"github.com/golang/glog"
 	"k8s.io/kubernetes/pkg/registry/core/service/ipallocator"
 
-	apiv1 "github.com/FlorianOtel/client-go/pkg/api/v1"
+	apiv1 "github.com/OpenPlatformSDN/client-go/pkg/api/v1"
 	"github.com/nuagenetworks/go-bambou/bambou"
 	"github.com/nuagenetworks/vspk-go/vspk"
 )

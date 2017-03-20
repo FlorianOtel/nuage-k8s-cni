@@ -17,9 +17,9 @@ limitations under the License.
 package policy
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/api"
-	metav1 "github.com/FlorianOtel/client-go/pkg/apis/meta/v1"
-	"github.com/FlorianOtel/client-go/pkg/util/intstr"
+	"github.com/OpenPlatformSDN/client-go/pkg/api"
+	metav1 "github.com/OpenPlatformSDN/client-go/pkg/apis/meta/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/intstr"
 )
 
 // PodDisruptionBudgetSpec is a description of a PodDisruptionBudget.

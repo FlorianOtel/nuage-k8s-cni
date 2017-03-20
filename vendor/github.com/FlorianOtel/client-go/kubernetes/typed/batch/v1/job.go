@@ -17,12 +17,12 @@ limitations under the License.
 package v1
 
 import (
-	api "github.com/FlorianOtel/client-go/pkg/api"
-	api_v1 "github.com/FlorianOtel/client-go/pkg/api/v1"
-	v1 "github.com/FlorianOtel/client-go/pkg/apis/batch/v1"
-	meta_v1 "github.com/FlorianOtel/client-go/pkg/apis/meta/v1"
-	watch "github.com/FlorianOtel/client-go/pkg/watch"
-	rest "github.com/FlorianOtel/client-go/rest"
+	api "github.com/OpenPlatformSDN/client-go/pkg/api"
+	api_v1 "github.com/OpenPlatformSDN/client-go/pkg/api/v1"
+	v1 "github.com/OpenPlatformSDN/client-go/pkg/apis/batch/v1"
+	meta_v1 "github.com/OpenPlatformSDN/client-go/pkg/apis/meta/v1"
+	watch "github.com/OpenPlatformSDN/client-go/pkg/watch"
+	rest "github.com/OpenPlatformSDN/client-go/rest"
 )
 
 // JobsGetter has a method to return a JobInterface.

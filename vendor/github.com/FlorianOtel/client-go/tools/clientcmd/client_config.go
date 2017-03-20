@@ -27,10 +27,10 @@ import (
 	"github.com/golang/glog"
 	"github.com/imdario/mergo"
 
-	"github.com/FlorianOtel/client-go/pkg/api"
-	"github.com/FlorianOtel/client-go/rest"
-	clientauth "github.com/FlorianOtel/client-go/tools/auth"
-	clientcmdapi "github.com/FlorianOtel/client-go/tools/clientcmd/api"
+	"github.com/OpenPlatformSDN/client-go/pkg/api"
+	"github.com/OpenPlatformSDN/client-go/rest"
+	clientauth "github.com/OpenPlatformSDN/client-go/tools/auth"
+	clientcmdapi "github.com/OpenPlatformSDN/client-go/tools/clientcmd/api"
 )
 
 var (

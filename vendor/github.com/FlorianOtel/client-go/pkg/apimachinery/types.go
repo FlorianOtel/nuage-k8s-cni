@@ -19,9 +19,9 @@ package apimachinery
 import (
 	"fmt"
 
-	"github.com/FlorianOtel/client-go/pkg/api/meta"
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/meta"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
 )
 
 // GroupMeta stores the metadata of a group.

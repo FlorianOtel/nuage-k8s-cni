@@ -23,7 +23,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/FlorianOtel/client-go/pkg/third_party/forked/golang/template"
+	"github.com/OpenPlatformSDN/client-go/pkg/third_party/forked/golang/template"
 )
 
 type JSONPath struct {

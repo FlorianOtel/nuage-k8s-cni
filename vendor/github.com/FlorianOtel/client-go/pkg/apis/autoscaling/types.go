@@ -17,8 +17,8 @@ limitations under the License.
 package autoscaling
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/api"
-	metav1 "github.com/FlorianOtel/client-go/pkg/apis/meta/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/api"
+	metav1 "github.com/OpenPlatformSDN/client-go/pkg/apis/meta/v1"
 )
 
 // Scale represents a scaling request for a resource.

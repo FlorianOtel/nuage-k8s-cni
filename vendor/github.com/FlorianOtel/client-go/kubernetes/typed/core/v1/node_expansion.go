@@ -17,8 +17,8 @@ limitations under the License.
 package v1
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/api"
-	"github.com/FlorianOtel/client-go/pkg/api/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/api"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/v1"
 )
 
 // The NodeExpansion interface allows manually adding extra methods to the NodeInterface.

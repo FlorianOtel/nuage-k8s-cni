@@ -16,7 +16,7 @@ limitations under the License.
 
 package fields
 
-import "github.com/FlorianOtel/client-go/pkg/selection"
+import "github.com/OpenPlatformSDN/client-go/pkg/selection"
 
 // Requirements is AND of all requirements.
 type Requirements []Requirement

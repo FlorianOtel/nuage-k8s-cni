@@ -16,7 +16,7 @@ limitations under the License.
 
 package v1beta1
 
-import "github.com/FlorianOtel/client-go/pkg/apis/extensions/v1beta1"
+import "github.com/OpenPlatformSDN/client-go/pkg/apis/extensions/v1beta1"
 
 // The DeploymentExpansion interface allows manually adding extra methods to the DeploymentInterface.
 type DeploymentExpansion interface {

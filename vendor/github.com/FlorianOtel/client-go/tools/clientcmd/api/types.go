@@ -17,7 +17,7 @@ limitations under the License.
 package api
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
 )
 
 // Where possible, json tags match the cli argument names.

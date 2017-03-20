@@ -21,9 +21,9 @@ limitations under the License.
 package v1beta1
 
 import (
-	authorization "github.com/FlorianOtel/client-go/pkg/apis/authorization"
-	conversion "github.com/FlorianOtel/client-go/pkg/conversion"
-	runtime "github.com/FlorianOtel/client-go/pkg/runtime"
+	authorization "github.com/OpenPlatformSDN/client-go/pkg/apis/authorization"
+	conversion "github.com/OpenPlatformSDN/client-go/pkg/conversion"
+	runtime "github.com/OpenPlatformSDN/client-go/pkg/runtime"
 	unsafe "unsafe"
 )
 

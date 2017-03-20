@@ -68,7 +68,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/FlorianOtel/client-go/rest"
+	"github.com/OpenPlatformSDN/client-go/rest"
 )
 
 // Info holds Kubernetes API authorization config.  It is intended

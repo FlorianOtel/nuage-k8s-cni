@@ -17,9 +17,9 @@ limitations under the License.
 package v1beta1
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/api/meta"
-	"github.com/FlorianOtel/client-go/pkg/apis/extensions/v1beta1"
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/meta"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/extensions/v1beta1"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
 )
 
 // The ScaleExpansion interface allows manually adding extra methods to the ScaleInterface.

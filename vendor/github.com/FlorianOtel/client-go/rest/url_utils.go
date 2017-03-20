@@ -21,7 +21,7 @@ import (
 	"net/url"
 	"path"
 
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
 )
 
 // DefaultServerURL converts a host, host:port, or URL string to the default base server API path

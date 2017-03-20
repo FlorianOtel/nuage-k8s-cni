@@ -19,7 +19,7 @@ package cache
 import (
 	"sync"
 
-	"github.com/FlorianOtel/client-go/pkg/util/sets"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/sets"
 )
 
 // PopProcessFunc is passed to Pop() method of Queue interface.

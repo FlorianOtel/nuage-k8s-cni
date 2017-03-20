@@ -23,7 +23,7 @@ import (
 	"sync"
 	"time"
 
-	utilnet "github.com/FlorianOtel/client-go/pkg/util/net"
+	utilnet "github.com/OpenPlatformSDN/client-go/pkg/util/net"
 )
 
 // TlsTransportCache caches TLS http.RoundTrippers different configurations. The

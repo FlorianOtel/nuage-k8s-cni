@@ -24,9 +24,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/FlorianOtel/client-go/pkg/api"
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	"github.com/FlorianOtel/client-go/pkg/util/diff"
+	"github.com/OpenPlatformSDN/client-go/pkg/api"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/diff"
 )
 
 var mutationDetectionEnabled = false

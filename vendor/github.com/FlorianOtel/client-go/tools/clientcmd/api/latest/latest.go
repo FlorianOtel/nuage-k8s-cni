@@ -17,12 +17,12 @@ limitations under the License.
 package latest
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
-	"github.com/FlorianOtel/client-go/pkg/runtime/serializer/json"
-	"github.com/FlorianOtel/client-go/pkg/runtime/serializer/versioning"
-	"github.com/FlorianOtel/client-go/tools/clientcmd/api"
-	"github.com/FlorianOtel/client-go/tools/clientcmd/api/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/serializer/json"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/serializer/versioning"
+	"github.com/OpenPlatformSDN/client-go/tools/clientcmd/api"
+	"github.com/OpenPlatformSDN/client-go/tools/clientcmd/api/v1"
 )
 
 // Version is the string that represents the current external default version.

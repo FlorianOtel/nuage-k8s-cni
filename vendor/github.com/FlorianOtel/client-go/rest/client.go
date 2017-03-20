@@ -26,10 +26,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/FlorianOtel/client-go/pkg/api"
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
-	"github.com/FlorianOtel/client-go/pkg/util/flowcontrol"
+	"github.com/OpenPlatformSDN/client-go/pkg/api"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/flowcontrol"
 )
 
 const (

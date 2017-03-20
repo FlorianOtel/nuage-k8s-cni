@@ -19,10 +19,10 @@ limitations under the License.
 package install
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/apimachinery/announced"
-	"github.com/FlorianOtel/client-go/pkg/apis/certificates"
-	"github.com/FlorianOtel/client-go/pkg/apis/certificates/v1alpha1"
-	"github.com/FlorianOtel/client-go/pkg/util/sets"
+	"github.com/OpenPlatformSDN/client-go/pkg/apimachinery/announced"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/certificates"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/certificates/v1alpha1"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/sets"
 )
 
 func init() {
@@ -30,7 +30,7 @@ func init() {
 		&announced.GroupMetaFactoryArgs{
 			GroupName:                  certificates.GroupName,
 			VersionPreferenceOrder:     []string{v1alpha1.SchemeGroupVersion.Version},
-			ImportPrefix:               "github.com/FlorianOtel/client-go/pkg/apis/certificates",
+			ImportPrefix:               "github.com/OpenPlatformSDN/client-go/pkg/apis/certificates",
 			RootScopedKinds:            sets.NewString("CertificateSigningRequest"),
 			AddInternalObjectsToScheme: certificates.AddToScheme,
 		},

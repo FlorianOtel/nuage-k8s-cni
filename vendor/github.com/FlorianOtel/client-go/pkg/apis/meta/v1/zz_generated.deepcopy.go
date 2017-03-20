@@ -21,7 +21,7 @@ limitations under the License.
 package v1
 
 import (
-	conversion "github.com/FlorianOtel/client-go/pkg/conversion"
+	conversion "github.com/OpenPlatformSDN/client-go/pkg/conversion"
 	time "time"
 )
 

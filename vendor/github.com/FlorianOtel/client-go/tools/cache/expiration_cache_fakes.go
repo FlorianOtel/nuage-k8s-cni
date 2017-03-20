@@ -17,8 +17,8 @@ limitations under the License.
 package cache
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/util/clock"
-	"github.com/FlorianOtel/client-go/pkg/util/sets"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/clock"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/sets"
 )
 
 type fakeThreadSafeMap struct {

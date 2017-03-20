@@ -19,10 +19,10 @@ limitations under the License.
 package install
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/apimachinery/announced"
-	"github.com/FlorianOtel/client-go/pkg/apis/storage"
-	"github.com/FlorianOtel/client-go/pkg/apis/storage/v1beta1"
-	"github.com/FlorianOtel/client-go/pkg/util/sets"
+	"github.com/OpenPlatformSDN/client-go/pkg/apimachinery/announced"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/storage"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/storage/v1beta1"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/sets"
 )
 
 func init() {
@@ -30,7 +30,7 @@ func init() {
 		&announced.GroupMetaFactoryArgs{
 			GroupName:                  storage.GroupName,
 			VersionPreferenceOrder:     []string{v1beta1.SchemeGroupVersion.Version},
-			ImportPrefix:               "github.com/FlorianOtel/client-go/pkg/apis/storage",
+			ImportPrefix:               "github.com/OpenPlatformSDN/client-go/pkg/apis/storage",
 			RootScopedKinds:            sets.NewString("StorageClass"),
 			AddInternalObjectsToScheme: storage.AddToScheme,
 		},

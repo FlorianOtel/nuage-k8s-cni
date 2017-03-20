@@ -20,10 +20,10 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/FlorianOtel/client-go/pkg/api/errors"
-	"github.com/FlorianOtel/client-go/pkg/api/meta"
-	metav1 "github.com/FlorianOtel/client-go/pkg/apis/meta/v1"
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/errors"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/meta"
+	metav1 "github.com/OpenPlatformSDN/client-go/pkg/apis/meta/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
 
 	"github.com/golang/glog"
 )

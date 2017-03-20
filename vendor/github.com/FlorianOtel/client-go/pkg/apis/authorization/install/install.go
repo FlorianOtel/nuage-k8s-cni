@@ -19,10 +19,10 @@ limitations under the License.
 package install
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/apimachinery/announced"
-	"github.com/FlorianOtel/client-go/pkg/apis/authorization"
-	"github.com/FlorianOtel/client-go/pkg/apis/authorization/v1beta1"
-	"github.com/FlorianOtel/client-go/pkg/util/sets"
+	"github.com/OpenPlatformSDN/client-go/pkg/apimachinery/announced"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/authorization"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/authorization/v1beta1"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/sets"
 )
 
 func init() {
@@ -30,7 +30,7 @@ func init() {
 		&announced.GroupMetaFactoryArgs{
 			GroupName:                  authorization.GroupName,
 			VersionPreferenceOrder:     []string{v1beta1.SchemeGroupVersion.Version},
-			ImportPrefix:               "github.com/FlorianOtel/client-go/pkg/apis/authorization",
+			ImportPrefix:               "github.com/OpenPlatformSDN/client-go/pkg/apis/authorization",
 			RootScopedKinds:            sets.NewString("SubjectAccessReview", "SelfSubjectAccessReview"),
 			AddInternalObjectsToScheme: authorization.AddToScheme,
 		},

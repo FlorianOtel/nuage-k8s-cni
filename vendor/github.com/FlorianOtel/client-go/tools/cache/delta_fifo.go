@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/FlorianOtel/client-go/pkg/util/sets"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/sets"
 
 	"github.com/golang/glog"
 )

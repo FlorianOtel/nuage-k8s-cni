@@ -21,8 +21,8 @@ import (
 	"fmt"
 	"strings"
 
-	utilerrors "github.com/FlorianOtel/client-go/pkg/util/errors"
-	"github.com/FlorianOtel/client-go/pkg/util/sets"
+	utilerrors "github.com/OpenPlatformSDN/client-go/pkg/util/errors"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/sets"
 )
 
 // Error is an implementation of the 'error' interface, which represents a

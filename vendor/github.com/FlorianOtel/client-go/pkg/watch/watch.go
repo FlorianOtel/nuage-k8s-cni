@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/FlorianOtel/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
 
 	"github.com/golang/glog"
 )

@@ -188,11 +188,11 @@ import proto "github.com/gogo/protobuf/proto"
 import fmt "fmt"
 import math "math"
 
-import k8s_io_kubernetes_pkg_api_resource "github.com/FlorianOtel/client-go/pkg/api/resource"
-import k8s_io_kubernetes_pkg_apis_meta_v1 "github.com/FlorianOtel/client-go/pkg/apis/meta/v1"
-import k8s_io_kubernetes_pkg_runtime "github.com/FlorianOtel/client-go/pkg/runtime"
+import k8s_io_kubernetes_pkg_api_resource "github.com/OpenPlatformSDN/client-go/pkg/api/resource"
+import k8s_io_kubernetes_pkg_apis_meta_v1 "github.com/OpenPlatformSDN/client-go/pkg/apis/meta/v1"
+import k8s_io_kubernetes_pkg_runtime "github.com/OpenPlatformSDN/client-go/pkg/runtime"
 
-import k8s_io_kubernetes_pkg_types "github.com/FlorianOtel/client-go/pkg/types"
+import k8s_io_kubernetes_pkg_types "github.com/OpenPlatformSDN/client-go/pkg/types"
 
 import strings "strings"
 import reflect "reflect"

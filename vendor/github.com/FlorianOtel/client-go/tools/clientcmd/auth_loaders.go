@@ -24,7 +24,7 @@ import (
 	"os"
 
 	"github.com/howeyc/gopass"
-	clientauth "github.com/FlorianOtel/client-go/tools/auth"
+	clientauth "github.com/OpenPlatformSDN/client-go/tools/auth"
 )
 
 // AuthLoaders are used to build clientauth.Info objects.

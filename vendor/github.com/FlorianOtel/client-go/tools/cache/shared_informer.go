@@ -21,9 +21,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	utilruntime "github.com/FlorianOtel/client-go/pkg/util/runtime"
-	"github.com/FlorianOtel/client-go/pkg/util/wait"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	utilruntime "github.com/OpenPlatformSDN/client-go/pkg/util/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/wait"
 
 	"github.com/golang/glog"
 )

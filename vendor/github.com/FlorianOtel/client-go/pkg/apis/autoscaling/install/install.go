@@ -19,9 +19,9 @@ limitations under the License.
 package install
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/apimachinery/announced"
-	"github.com/FlorianOtel/client-go/pkg/apis/autoscaling"
-	"github.com/FlorianOtel/client-go/pkg/apis/autoscaling/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/apimachinery/announced"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/autoscaling"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/autoscaling/v1"
 )
 
 func init() {
@@ -29,7 +29,7 @@ func init() {
 		&announced.GroupMetaFactoryArgs{
 			GroupName:                  autoscaling.GroupName,
 			VersionPreferenceOrder:     []string{v1.SchemeGroupVersion.Version},
-			ImportPrefix:               "github.com/FlorianOtel/client-go/pkg/apis/autoscaling",
+			ImportPrefix:               "github.com/OpenPlatformSDN/client-go/pkg/apis/autoscaling",
 			AddInternalObjectsToScheme: autoscaling.AddToScheme,
 		},
 		announced.VersionToSchemeFunc{

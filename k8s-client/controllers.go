@@ -12,13 +12,13 @@ import (
 
 	"github.com/golang/glog"
 	//
-	"github.com/FlorianOtel/client-go/kubernetes"
-	apiv1 "github.com/FlorianOtel/client-go/pkg/api/v1"
-	apiv1beta1 "github.com/FlorianOtel/client-go/pkg/apis/extensions/v1beta1"
-	"github.com/FlorianOtel/client-go/pkg/fields"
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	"github.com/FlorianOtel/client-go/tools/cache"
-	// "github.com/FlorianOtel/client-go/pkg/util/wait"
+	"github.com/OpenPlatformSDN/client-go/kubernetes"
+	apiv1 "github.com/OpenPlatformSDN/client-go/pkg/api/v1"
+	apiv1beta1 "github.com/OpenPlatformSDN/client-go/pkg/apis/extensions/v1beta1"
+	"github.com/OpenPlatformSDN/client-go/pkg/fields"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/tools/cache"
+	// "github.com/OpenPlatformSDN/client-go/pkg/util/wait"
 )
 
 // CreateResourceController creates a controller for a specific ressource and namespace.

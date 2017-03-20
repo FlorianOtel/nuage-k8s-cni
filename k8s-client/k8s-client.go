@@ -8,9 +8,9 @@ import (
 
 	"github.com/golang/glog"
 
-	"github.com/FlorianOtel/client-go/kubernetes"
-	"github.com/FlorianOtel/client-go/pkg/util/wait"
-	"github.com/FlorianOtel/client-go/tools/clientcmd"
+	"github.com/OpenPlatformSDN/client-go/kubernetes"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/wait"
+	"github.com/OpenPlatformSDN/client-go/tools/clientcmd"
 	"github.com/FlorianOtel/go-bambou/bambou"
 	"github.com/nuagenetworks/vspk-go/vspk"
 )

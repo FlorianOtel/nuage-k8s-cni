@@ -19,9 +19,9 @@ limitations under the License.
 package install
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/apimachinery/announced"
-	"github.com/FlorianOtel/client-go/pkg/apis/policy"
-	"github.com/FlorianOtel/client-go/pkg/apis/policy/v1beta1"
+	"github.com/OpenPlatformSDN/client-go/pkg/apimachinery/announced"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/policy"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/policy/v1beta1"
 )
 
 func init() {
@@ -29,7 +29,7 @@ func init() {
 		&announced.GroupMetaFactoryArgs{
 			GroupName:                  policy.GroupName,
 			VersionPreferenceOrder:     []string{v1beta1.SchemeGroupVersion.Version},
-			ImportPrefix:               "github.com/FlorianOtel/client-go/pkg/apis/policy",
+			ImportPrefix:               "github.com/OpenPlatformSDN/client-go/pkg/apis/policy",
 			AddInternalObjectsToScheme: policy.AddToScheme,
 		},
 		announced.VersionToSchemeFunc{

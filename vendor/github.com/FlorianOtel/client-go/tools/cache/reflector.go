@@ -34,13 +34,13 @@ import (
 	"time"
 
 	"github.com/golang/glog"
-	apierrs "github.com/FlorianOtel/client-go/pkg/api/errors"
-	"github.com/FlorianOtel/client-go/pkg/api/meta"
-	"github.com/FlorianOtel/client-go/pkg/api/v1"
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	utilruntime "github.com/FlorianOtel/client-go/pkg/util/runtime"
-	"github.com/FlorianOtel/client-go/pkg/util/wait"
-	"github.com/FlorianOtel/client-go/pkg/watch"
+	apierrs "github.com/OpenPlatformSDN/client-go/pkg/api/errors"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/meta"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	utilruntime "github.com/OpenPlatformSDN/client-go/pkg/util/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/wait"
+	"github.com/OpenPlatformSDN/client-go/pkg/watch"
 )
 
 // Reflector watches a specified resource and causes all changes to be reflected in the given store.
@@ -149,8 +149,8 @@ func hasPackage(file string, ignoredPackages []string) bool {
 
 // trimPackagePrefix reduces duplicate values off the front of a package name.
 func trimPackagePrefix(file string) string {
-	if l := strings.LastIndex(file, "github.com/FlorianOtel/client-go/pkg/"); l >= 0 {
-		return file[l+len("github.com/FlorianOtel/client-go/"):]
+	if l := strings.LastIndex(file, "github.com/OpenPlatformSDN/client-go/pkg/"); l >= 0 {
+		return file[l+len("github.com/OpenPlatformSDN/client-go/"):]
 	}
 	if l := strings.LastIndex(file, "/src/"); l >= 0 {
 		return file[l+5:]

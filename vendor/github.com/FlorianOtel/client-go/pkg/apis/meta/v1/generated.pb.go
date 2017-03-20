@@ -60,7 +60,7 @@ import fmt "fmt"
 import math "math"
 
 import time "time"
-import k8s_io_kubernetes_pkg_types "github.com/FlorianOtel/client-go/pkg/types"
+import k8s_io_kubernetes_pkg_types "github.com/OpenPlatformSDN/client-go/pkg/types"
 
 import strings "strings"
 import reflect "reflect"

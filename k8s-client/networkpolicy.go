@@ -1,11 +1,11 @@
 package k8s
 
 import (
-	apiv1beta1 "github.com/FlorianOtel/client-go/pkg/apis/extensions/v1beta1"
+	apiv1beta1 "github.com/OpenPlatformSDN/client-go/pkg/apis/extensions/v1beta1"
 	"github.com/golang/glog"
 )
 
-// "github.com/FlorianOtel/client-go/pkg/util/wait"
+// "github.com/OpenPlatformSDN/client-go/pkg/util/wait"
 
 func NetworkPolicyCreated(networkpolicy *apiv1beta1.NetworkPolicy) error {
 	glog.Info("=====> A networkpolicy got created")

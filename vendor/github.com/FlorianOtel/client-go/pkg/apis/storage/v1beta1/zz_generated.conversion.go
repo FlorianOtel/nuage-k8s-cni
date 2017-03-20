@@ -21,9 +21,9 @@ limitations under the License.
 package v1beta1
 
 import (
-	storage "github.com/FlorianOtel/client-go/pkg/apis/storage"
-	conversion "github.com/FlorianOtel/client-go/pkg/conversion"
-	runtime "github.com/FlorianOtel/client-go/pkg/runtime"
+	storage "github.com/OpenPlatformSDN/client-go/pkg/apis/storage"
+	conversion "github.com/OpenPlatformSDN/client-go/pkg/conversion"
+	runtime "github.com/OpenPlatformSDN/client-go/pkg/runtime"
 	unsafe "unsafe"
 )
 

@@ -24,8 +24,8 @@ import (
 	"net/url"
 	"reflect"
 
-	"github.com/FlorianOtel/client-go/pkg/conversion/queryparams"
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
+	"github.com/OpenPlatformSDN/client-go/pkg/conversion/queryparams"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
 )
 
 // codec binds an encoder and decoder.

@@ -19,10 +19,10 @@ limitations under the License.
 package install
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/apimachinery/announced"
-	"github.com/FlorianOtel/client-go/pkg/apis/batch"
-	"github.com/FlorianOtel/client-go/pkg/apis/batch/v1"
-	"github.com/FlorianOtel/client-go/pkg/apis/batch/v2alpha1"
+	"github.com/OpenPlatformSDN/client-go/pkg/apimachinery/announced"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/batch"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/batch/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/batch/v2alpha1"
 )
 
 func init() {
@@ -30,7 +30,7 @@ func init() {
 		&announced.GroupMetaFactoryArgs{
 			GroupName:                  batch.GroupName,
 			VersionPreferenceOrder:     []string{v1.SchemeGroupVersion.Version, v2alpha1.SchemeGroupVersion.Version},
-			ImportPrefix:               "github.com/FlorianOtel/client-go/pkg/apis/batch",
+			ImportPrefix:               "github.com/OpenPlatformSDN/client-go/pkg/apis/batch",
 			AddInternalObjectsToScheme: batch.AddToScheme,
 		},
 		announced.VersionToSchemeFunc{

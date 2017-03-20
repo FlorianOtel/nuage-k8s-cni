@@ -21,9 +21,9 @@ limitations under the License.
 package authorization
 
 import (
-	api "github.com/FlorianOtel/client-go/pkg/api"
-	conversion "github.com/FlorianOtel/client-go/pkg/conversion"
-	runtime "github.com/FlorianOtel/client-go/pkg/runtime"
+	api "github.com/OpenPlatformSDN/client-go/pkg/api"
+	conversion "github.com/OpenPlatformSDN/client-go/pkg/conversion"
+	runtime "github.com/OpenPlatformSDN/client-go/pkg/runtime"
 	reflect "reflect"
 )
 

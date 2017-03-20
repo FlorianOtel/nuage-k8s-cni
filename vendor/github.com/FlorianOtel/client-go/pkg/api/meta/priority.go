@@ -19,7 +19,7 @@ package meta
 import (
 	"fmt"
 
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
 )
 
 const (

@@ -18,11 +18,11 @@ package v1beta1
 
 import (
 	fmt "fmt"
-	api "github.com/FlorianOtel/client-go/pkg/api"
-	registered "github.com/FlorianOtel/client-go/pkg/apimachinery/registered"
-	schema "github.com/FlorianOtel/client-go/pkg/runtime/schema"
-	serializer "github.com/FlorianOtel/client-go/pkg/runtime/serializer"
-	rest "github.com/FlorianOtel/client-go/rest"
+	api "github.com/OpenPlatformSDN/client-go/pkg/api"
+	registered "github.com/OpenPlatformSDN/client-go/pkg/apimachinery/registered"
+	schema "github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
+	serializer "github.com/OpenPlatformSDN/client-go/pkg/runtime/serializer"
+	rest "github.com/OpenPlatformSDN/client-go/rest"
 )
 
 type PolicyV1beta1Interface interface {

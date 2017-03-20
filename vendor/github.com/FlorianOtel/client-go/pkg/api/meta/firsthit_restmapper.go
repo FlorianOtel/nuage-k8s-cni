@@ -19,8 +19,8 @@ package meta
 import (
 	"fmt"
 
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
-	utilerrors "github.com/FlorianOtel/client-go/pkg/util/errors"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
+	utilerrors "github.com/OpenPlatformSDN/client-go/pkg/util/errors"
 )
 
 // FirstHitRESTMapper is a wrapper for multiple RESTMappers which returns the

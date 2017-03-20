@@ -4,7 +4,7 @@ import (
 	"github.com/golang/glog"
 	//
 
-	apiv1 "github.com/FlorianOtel/client-go/pkg/api/v1"
+	apiv1 "github.com/OpenPlatformSDN/client-go/pkg/api/v1"
 	"github.com/FlorianOtel/go-bambou/bambou"
 	vsd "github.com/OpenPlatformSDN/nuage-k8s-cni/vsd-client"
 	"github.com/nuagenetworks/vspk-go/vspk"

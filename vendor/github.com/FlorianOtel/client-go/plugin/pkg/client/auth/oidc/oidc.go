@@ -29,8 +29,8 @@ import (
 	"github.com/coreos/go-oidc/oidc"
 	"github.com/golang/glog"
 
-	"github.com/FlorianOtel/client-go/pkg/util/wait"
-	"github.com/FlorianOtel/client-go/rest"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/wait"
+	"github.com/OpenPlatformSDN/client-go/rest"
 )
 
 const (

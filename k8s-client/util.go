@@ -7,10 +7,10 @@ import (
 	"github.com/golang/glog"
 	//
 
-	apiv1 "github.com/FlorianOtel/client-go/pkg/api/v1"
-	apiv1beta1 "github.com/FlorianOtel/client-go/pkg/apis/extensions/v1beta1"
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	// "github.com/FlorianOtel/client-go/pkg/util/wait"
+	apiv1 "github.com/OpenPlatformSDN/client-go/pkg/api/v1"
+	apiv1beta1 "github.com/OpenPlatformSDN/client-go/pkg/apis/extensions/v1beta1"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	// "github.com/OpenPlatformSDN/client-go/pkg/util/wait"
 )
 
 // Pretty Prints (JSON) for a Kubernetes API object:

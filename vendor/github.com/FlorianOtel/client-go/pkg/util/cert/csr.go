@@ -25,8 +25,8 @@ import (
 	"errors"
 	"net"
 
-	"github.com/FlorianOtel/client-go/pkg/apis/certificates"
-	"github.com/FlorianOtel/client-go/pkg/apis/certificates/v1alpha1"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/certificates"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/certificates/v1alpha1"
 )
 
 // ParseCSR extracts the CSR from the API object and decodes it.

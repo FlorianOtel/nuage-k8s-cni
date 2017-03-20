@@ -23,9 +23,9 @@ import (
 	"reflect"
 	"strings"
 
-	utilerrors "github.com/FlorianOtel/client-go/pkg/util/errors"
-	"github.com/FlorianOtel/client-go/pkg/util/validation"
-	clientcmdapi "github.com/FlorianOtel/client-go/tools/clientcmd/api"
+	utilerrors "github.com/OpenPlatformSDN/client-go/pkg/util/errors"
+	"github.com/OpenPlatformSDN/client-go/pkg/util/validation"
+	clientcmdapi "github.com/OpenPlatformSDN/client-go/tools/clientcmd/api"
 )
 
 var (

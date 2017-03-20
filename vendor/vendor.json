@@ -16,679 +16,679 @@
 		},
 		{
 			"checksumSHA1": "iTUYo1vyD9psB6ONbgzDiZ4q78Q=",
-			"path": "github.com/FlorianOtel/client-go/discovery",
+			"path": "github.com/OpenPlatformSDN/client-go/discovery",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "Y8X2Tvx95IKbhPJPt12JDirasI0=",
-			"path": "github.com/FlorianOtel/client-go/kubernetes",
+			"path": "github.com/OpenPlatformSDN/client-go/kubernetes",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "cMq51+K8ICtBRRqa2lq4+AQQLms=",
-			"path": "github.com/FlorianOtel/client-go/kubernetes/typed/apps/v1beta1",
+			"path": "github.com/OpenPlatformSDN/client-go/kubernetes/typed/apps/v1beta1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "pVt0eS3qz7e4A45MDVWZi2aJqbs=",
-			"path": "github.com/FlorianOtel/client-go/kubernetes/typed/authentication/v1beta1",
+			"path": "github.com/OpenPlatformSDN/client-go/kubernetes/typed/authentication/v1beta1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "5+40A7cXwz7w3xYBQmdtmLx4ziE=",
-			"path": "github.com/FlorianOtel/client-go/kubernetes/typed/authorization/v1beta1",
+			"path": "github.com/OpenPlatformSDN/client-go/kubernetes/typed/authorization/v1beta1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "br6kTvGtKDMjY8x16cYCC1bKJ4M=",
-			"path": "github.com/FlorianOtel/client-go/kubernetes/typed/autoscaling/v1",
+			"path": "github.com/OpenPlatformSDN/client-go/kubernetes/typed/autoscaling/v1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "XhIYyas9OkXWMnsu5iBFi1VLOZM=",
-			"path": "github.com/FlorianOtel/client-go/kubernetes/typed/batch/v1",
+			"path": "github.com/OpenPlatformSDN/client-go/kubernetes/typed/batch/v1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "sNlviQui4qiPHvLteffKuBmEo3g=",
-			"path": "github.com/FlorianOtel/client-go/kubernetes/typed/batch/v2alpha1",
+			"path": "github.com/OpenPlatformSDN/client-go/kubernetes/typed/batch/v2alpha1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "MrkuIjazB3CHL7vkHVSAynXi9cY=",
-			"path": "github.com/FlorianOtel/client-go/kubernetes/typed/certificates/v1alpha1",
+			"path": "github.com/OpenPlatformSDN/client-go/kubernetes/typed/certificates/v1alpha1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "8Lxjyi9eOzCNNpRgC6MFRTDHLuk=",
-			"path": "github.com/FlorianOtel/client-go/kubernetes/typed/core/v1",
+			"path": "github.com/OpenPlatformSDN/client-go/kubernetes/typed/core/v1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "rkFS3WCXsG2DWe6ulXoC1RP+Bkc=",
-			"path": "github.com/FlorianOtel/client-go/kubernetes/typed/extensions/v1beta1",
+			"path": "github.com/OpenPlatformSDN/client-go/kubernetes/typed/extensions/v1beta1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "fvRTN4CEBP2RyBiah2rIY1zo0ms=",
-			"path": "github.com/FlorianOtel/client-go/kubernetes/typed/policy/v1beta1",
+			"path": "github.com/OpenPlatformSDN/client-go/kubernetes/typed/policy/v1beta1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "U69T0QJU3maXIuksa5ULeh7Qs9w=",
-			"path": "github.com/FlorianOtel/client-go/kubernetes/typed/rbac/v1alpha1",
+			"path": "github.com/OpenPlatformSDN/client-go/kubernetes/typed/rbac/v1alpha1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "hpfq7q/QdRQBtIodyTp2+Q/ZzFc=",
-			"path": "github.com/FlorianOtel/client-go/kubernetes/typed/storage/v1beta1",
+			"path": "github.com/OpenPlatformSDN/client-go/kubernetes/typed/storage/v1beta1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "xJ8eQZfjqCbo3FIVSqkD+pKo6EI=",
-			"path": "github.com/FlorianOtel/client-go/pkg/api",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/api",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "tSbyiOVHUW3UCGCWlG8rGSeaLEs=",
-			"path": "github.com/FlorianOtel/client-go/pkg/api/errors",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/api/errors",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "dAoWROFUCBxLpEVide/ls/1EZFY=",
-			"path": "github.com/FlorianOtel/client-go/pkg/api/install",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/api/install",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "NxuAMSagTynKEaHJuTQwgKKY9GU=",
-			"path": "github.com/FlorianOtel/client-go/pkg/api/meta",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/api/meta",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "XuPs89Tkh1y6T/BcTUY+8w31uWw=",
-			"path": "github.com/FlorianOtel/client-go/pkg/api/resource",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/api/resource",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "6o0NAomjTSjX7daRA1QkpXQQbCk=",
-			"path": "github.com/FlorianOtel/client-go/pkg/api/v1",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/api/v1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "ZeGFcbMdz4L68RFCCWLm0+3cknE=",
-			"path": "github.com/FlorianOtel/client-go/pkg/api/validation/path",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/api/validation/path",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "PCZH4J4bVmjatntiRWvRN8gBjKI=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apimachinery",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apimachinery",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "qEPpIIWoXKe/MA7LJVHzu9Nrc54=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apimachinery/announced",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apimachinery/announced",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "tMVl120jCy3FeXgKuZIngBeWETI=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apimachinery/registered",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apimachinery/registered",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "6Etczs+/kICldStZcto783J4sm4=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/apps",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/apps",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "h08D2JcyhM2C6XqavZr0g0FhCjI=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/apps/install",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/apps/install",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "UPX1+nNIyzEyLaOxIibP2flRH44=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/apps/v1beta1",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/apps/v1beta1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "zM9lxekgKDNbBrMKJlBUu/LcRy4=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/authentication",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/authentication",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "WETmk9jYDNmqAG1WD1E+25CVoWg=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/authentication/install",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/authentication/install",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "kePvBsQJwBJ+y1PezNM1rHW88J4=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/authentication/v1beta1",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/authentication/v1beta1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "yswez9lfRYHwTx5/nbrUfVOCH6U=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/authorization",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/authorization",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "+TBEzsJ8uN9KhNLf47znihMhQcQ=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/authorization/install",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/authorization/install",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "a+5sHEpk1vOD9xyQPCFyY6RTS/E=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/authorization/v1beta1",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/authorization/v1beta1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "ikNOkqjvLoqebqSdD4nvhGsi3no=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/autoscaling",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/autoscaling",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "i0J6qDnqM8pc9D+mLpv2+cEXJFI=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/autoscaling/install",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/autoscaling/install",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "TuGQkY1VBjCHRK2Rmt05cyuwWgg=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/autoscaling/v1",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/autoscaling/v1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "uwo1yStJ42yhMJiHLX69VkOgVlU=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/batch",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/batch",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "rS6K+1v6j0wqlW8tSTrb09yF46w=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/batch/install",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/batch/install",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "1iIcWbPpfyWT2nnm1d3NZl6T+IE=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/batch/v1",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/batch/v1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "+ptPOjLVVJVom4B5I9ThlA2QrFg=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/batch/v2alpha1",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/batch/v2alpha1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "Qd77/bT/HGhGXNJTQOq2ziJQZxM=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/certificates",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/certificates",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "mUrvxQTjN1ahVAucStU5AidWaQE=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/certificates/install",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/certificates/install",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "w+0xA8MQ2SM/kope0ar4vUAWH1o=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/certificates/v1alpha1",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/certificates/v1alpha1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "nZb7VeBn7FR7eVejkXk8fkJ276E=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/extensions",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/extensions",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "AMa9zyvIaVMlenpn7+Ev5KCXZvk=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/extensions/install",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/extensions/install",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "ZeksbDZE1p3EIJ0mixm3jItSwg4=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/extensions/v1beta1",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/extensions/v1beta1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "B5waaNGQOUl0TjbUIzJLwF68mxw=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/meta/v1",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/meta/v1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "1Ru17dLpGcJ7R3WBsOkIBlyiwqY=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/meta/v1/unstructured",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/meta/v1/unstructured",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "PtIQNHkIM72x8cKydJMFX9zdtbQ=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/policy",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/policy",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "zRSDysRr2uoCSCsgDcx8CJ2RWJI=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/policy/install",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/policy/install",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "RddtU6fx8AZPvBpP6YPXoEJh4Js=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/policy/v1beta1",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/policy/v1beta1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "7Jshf/ha+9KhHsBymFgtJf2LGko=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/rbac",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/rbac",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "P1WQNZZi8v5c3Rbv/zzOpt3sOO4=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/rbac/install",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/rbac/install",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "9mWmVHQA/86l/bX8onTxhHD8dM8=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/rbac/v1alpha1",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/rbac/v1alpha1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "wM7+FJMzNV30m8ZuvuZi74u+Dmk=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/storage",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/storage",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "IehYGpS1960yB2vTXOZccsKzX1E=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/storage/install",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/storage/install",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "y9JPKKOQJ25p6Egp0Cp6FBcTtNY=",
-			"path": "github.com/FlorianOtel/client-go/pkg/apis/storage/v1beta1",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/apis/storage/v1beta1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "tmYtsAPanHww3vyE42k1ha37H28=",
-			"path": "github.com/FlorianOtel/client-go/pkg/auth/user",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/auth/user",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "nHl0Yh2+f7OBazsWHwmf9/tBcB4=",
-			"path": "github.com/FlorianOtel/client-go/pkg/conversion",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/conversion",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "EGx6Bv3RehykSDD1iagWIcb0kj4=",
-			"path": "github.com/FlorianOtel/client-go/pkg/conversion/queryparams",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/conversion/queryparams",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "qU1dQl6BVD3IZQqbr7/71IyaaB4=",
-			"path": "github.com/FlorianOtel/client-go/pkg/fields",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/fields",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "b9dL1X26uDojOI1fX8gCK4yPE70=",
-			"path": "github.com/FlorianOtel/client-go/pkg/genericapiserver/openapi/common",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/genericapiserver/openapi/common",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "ttvko7mw2SRw7xihU3mpyMiojE8=",
-			"path": "github.com/FlorianOtel/client-go/pkg/labels",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/labels",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "+Dx/Y9NpinRvieoIY2Txd2De958=",
-			"path": "github.com/FlorianOtel/client-go/pkg/runtime",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/runtime",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "7ZYNZeDiCwfKiK1qYTBsg2ml7pQ=",
-			"path": "github.com/FlorianOtel/client-go/pkg/runtime/schema",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/runtime/schema",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "1Li/qh6I5CFe394eN7z+WzKkYRY=",
-			"path": "github.com/FlorianOtel/client-go/pkg/runtime/serializer",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/runtime/serializer",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "PmWSPIf0zCVXOHlFeNDFO3SG0rQ=",
-			"path": "github.com/FlorianOtel/client-go/pkg/runtime/serializer/json",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/runtime/serializer/json",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "ESLi9rYNHORGMrQwW9lUqPBU4r0=",
-			"path": "github.com/FlorianOtel/client-go/pkg/runtime/serializer/protobuf",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/runtime/serializer/protobuf",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "CR7px0NViPKd13PYaOX0qPraJss=",
-			"path": "github.com/FlorianOtel/client-go/pkg/runtime/serializer/recognizer",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/runtime/serializer/recognizer",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "JmP7xIQ3jbtWixeA+tW7c8uJH/Y=",
-			"path": "github.com/FlorianOtel/client-go/pkg/runtime/serializer/streaming",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/runtime/serializer/streaming",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "N4RLEqek7/QQTSV4vHf5Rk21pmc=",
-			"path": "github.com/FlorianOtel/client-go/pkg/runtime/serializer/versioning",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/runtime/serializer/versioning",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "YwuynGke7tZyRuiaiEvMzx2VFss=",
-			"path": "github.com/FlorianOtel/client-go/pkg/selection",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/selection",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "PvfnGH3MDXphoDCAzYUVB2BbpIE=",
-			"path": "github.com/FlorianOtel/client-go/pkg/third_party/forked/golang/reflect",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/third_party/forked/golang/reflect",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "HdK6UwpW9QFKRIcjHMQfSJMjFwk=",
-			"path": "github.com/FlorianOtel/client-go/pkg/third_party/forked/golang/template",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/third_party/forked/golang/template",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "9UHDzhBTWM+34r/pojPP9pHn5ic=",
-			"path": "github.com/FlorianOtel/client-go/pkg/types",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/types",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "i+LvonYoqYykZfjWPQYFXch2GMs=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "GmjjhpbDSQwnLpgsor3NgkxX4G0=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/cert",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/cert",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "uoyAV7M6gwuQ2KBmm5sxKsCGeo0=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/clock",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/clock",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "7cxi1+izFmFMZdp2povzbWtEdGU=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/diff",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/diff",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "ZuZWjjbR1/06vZSeIeruIU2qiP0=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/errors",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/errors",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "GKko1SL2b+YvHFIfhuVLmjjAy/0=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/flowcontrol",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/flowcontrol",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "xMjh+7MBO6GWJw/2X1m2VsKPFX4=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/framer",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/framer",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "0fSV/CoJWTSL61T7tzaWrUBILNc=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/homedir",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/homedir",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "vW2h500GAB4w0sYHMQKl1zbh75U=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/integer",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/integer",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "uHgwYTJRKGgyXzb9zxeaa9BQ6M4=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/intstr",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/intstr",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "yHa1/7jJ918a8pfui8pKb16tj5k=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/json",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/json",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "l7iLxCE0757R9DzMboqzSBfhQO8=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/jsonpath",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/jsonpath",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "iJE5QuH1vAh9ZThAqaQHYKD0A54=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/labels",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/labels",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "bLoCcFERKxe1ShUZiCNSsC3zAFU=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/net",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/net",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "JCD78CX52DxU/YreC6Kq8q/35fA=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/parsers",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/parsers",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "7rlqEhY6fNzbZHyXLN7oVpqECs8=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/rand",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/rand",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "+tmkFLF6J0qxA4W4BcD9FNTPoCw=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/runtime",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/runtime",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "80IuG7n0hIJumMiD9zoT8RqcsqY=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/sets",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/sets",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "H9xiIszwmxWzoahjNNQExCvgm2g=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/uuid",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/uuid",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "WJjwUBbWreBcEhyh6+NG9QxC1DQ=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/validation",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/validation",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "dgBOB7iCPHUG2/y0c8jsxo9PS7A=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/validation/field",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/validation/field",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "AB8EHRrxTLfaoMBVETlzg98+zWo=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/wait",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/wait",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "bXvHAHxGNrIPbrqmB8OMnXo/7SE=",
-			"path": "github.com/FlorianOtel/client-go/pkg/util/yaml",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/util/yaml",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "zJgGQDLrgxgtaB1p9EL9GPm13c4=",
-			"path": "github.com/FlorianOtel/client-go/pkg/version",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/version",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "yh68UmhLfdmz7Z5PoDcsPrvUD9Q=",
-			"path": "github.com/FlorianOtel/client-go/pkg/watch",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/watch",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "MEicGGU8us2m0CTG+A+JA66NbW0=",
-			"path": "github.com/FlorianOtel/client-go/pkg/watch/versioned",
+			"path": "github.com/OpenPlatformSDN/client-go/pkg/watch/versioned",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "FZ24+2c/GQJbcPjPn3xxmlOkAHo=",
-			"path": "github.com/FlorianOtel/client-go/plugin/pkg/client/auth",
+			"path": "github.com/OpenPlatformSDN/client-go/plugin/pkg/client/auth",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "MCo4+eJVDcSFSBAv4Q5WoUgnWDY=",
-			"path": "github.com/FlorianOtel/client-go/plugin/pkg/client/auth/gcp",
+			"path": "github.com/OpenPlatformSDN/client-go/plugin/pkg/client/auth/gcp",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "w4Vqp/uni7GcGojmwzosgaJQNCI=",
-			"path": "github.com/FlorianOtel/client-go/plugin/pkg/client/auth/oidc",
+			"path": "github.com/OpenPlatformSDN/client-go/plugin/pkg/client/auth/oidc",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "eVRXbkdMvlP5OIQ9RmBvzLJk4xY=",
-			"path": "github.com/FlorianOtel/client-go/rest",
+			"path": "github.com/OpenPlatformSDN/client-go/rest",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "la0wyKkyN6LTrX/lZRi5+IPHrOE=",
-			"path": "github.com/FlorianOtel/client-go/tools/auth",
+			"path": "github.com/OpenPlatformSDN/client-go/tools/auth",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "dqpADt+whXgdF8vv4S5SKgk6BN4=",
-			"path": "github.com/FlorianOtel/client-go/tools/cache",
+			"path": "github.com/OpenPlatformSDN/client-go/tools/cache",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "q7bjfJ9HDSBQsUZDTacbS7T+G8A=",
-			"path": "github.com/FlorianOtel/client-go/tools/clientcmd",
+			"path": "github.com/OpenPlatformSDN/client-go/tools/clientcmd",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "rORO/HRwgXqex1kG/BfVWqpm734=",
-			"path": "github.com/FlorianOtel/client-go/tools/clientcmd/api",
+			"path": "github.com/OpenPlatformSDN/client-go/tools/clientcmd/api",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "0KzthQE0O3JUFxgQH9cahlGnDf4=",
-			"path": "github.com/FlorianOtel/client-go/tools/clientcmd/api/latest",
+			"path": "github.com/OpenPlatformSDN/client-go/tools/clientcmd/api/latest",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "Tl85Kd0yO94Vc65zoplgsg6FPfA=",
-			"path": "github.com/FlorianOtel/client-go/tools/clientcmd/api/v1",
+			"path": "github.com/OpenPlatformSDN/client-go/tools/clientcmd/api/v1",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "M+SU2X2vZvDqxZ2FUX/okYnZdH4=",
-			"path": "github.com/FlorianOtel/client-go/tools/metrics",
+			"path": "github.com/OpenPlatformSDN/client-go/tools/metrics",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},
 		{
 			"checksumSHA1": "EUarviorDNXPsWwIKJjnPF5mlWo=",
-			"path": "github.com/FlorianOtel/client-go/transport",
+			"path": "github.com/OpenPlatformSDN/client-go/transport",
 			"revision": "b7ffd8d01090c803b208f1914b7d61f9d7e9b53d",
 			"revisionTime": "2016-12-24T10:25:27Z"
 		},

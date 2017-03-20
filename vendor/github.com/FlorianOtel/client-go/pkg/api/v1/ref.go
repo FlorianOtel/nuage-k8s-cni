@@ -19,13 +19,13 @@ package v1
 import (
 	"errors"
 	"fmt"
-	"github.com/FlorianOtel/client-go/pkg/api"
+	"github.com/OpenPlatformSDN/client-go/pkg/api"
 	"net/url"
 	"strings"
 
-	"github.com/FlorianOtel/client-go/pkg/api/meta"
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/meta"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
 )
 
 var (

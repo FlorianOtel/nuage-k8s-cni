@@ -17,7 +17,7 @@ limitations under the License.
 package v1beta1
 
 import (
-	policy "github.com/FlorianOtel/client-go/pkg/apis/policy/v1beta1"
+	policy "github.com/OpenPlatformSDN/client-go/pkg/apis/policy/v1beta1"
 )
 
 // The EvictionExpansion interface allows manually adding extra methods to the ScaleInterface.

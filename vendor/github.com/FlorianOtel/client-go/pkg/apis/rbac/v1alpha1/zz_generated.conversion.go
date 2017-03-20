@@ -21,9 +21,9 @@ limitations under the License.
 package v1alpha1
 
 import (
-	rbac "github.com/FlorianOtel/client-go/pkg/apis/rbac"
-	conversion "github.com/FlorianOtel/client-go/pkg/conversion"
-	runtime "github.com/FlorianOtel/client-go/pkg/runtime"
+	rbac "github.com/OpenPlatformSDN/client-go/pkg/apis/rbac"
+	conversion "github.com/OpenPlatformSDN/client-go/pkg/conversion"
+	runtime "github.com/OpenPlatformSDN/client-go/pkg/runtime"
 	unsafe "unsafe"
 )
 

@@ -19,11 +19,11 @@ package v2alpha1
 import (
 	"fmt"
 
-	"github.com/FlorianOtel/client-go/pkg/api"
-	v1 "github.com/FlorianOtel/client-go/pkg/api/v1"
-	"github.com/FlorianOtel/client-go/pkg/apis/batch"
-	"github.com/FlorianOtel/client-go/pkg/conversion"
-	"github.com/FlorianOtel/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/api"
+	v1 "github.com/OpenPlatformSDN/client-go/pkg/api/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/apis/batch"
+	"github.com/OpenPlatformSDN/client-go/pkg/conversion"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
 )
 
 func addConversionFuncs(scheme *runtime.Scheme) error {

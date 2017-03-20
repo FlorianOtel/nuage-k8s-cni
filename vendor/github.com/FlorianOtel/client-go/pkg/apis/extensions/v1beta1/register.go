@@ -17,11 +17,11 @@ limitations under the License.
 package v1beta1
 
 import (
-	"github.com/FlorianOtel/client-go/pkg/api/v1"
-	metav1 "github.com/FlorianOtel/client-go/pkg/apis/meta/v1"
-	"github.com/FlorianOtel/client-go/pkg/runtime"
-	"github.com/FlorianOtel/client-go/pkg/runtime/schema"
-	versionedwatch "github.com/FlorianOtel/client-go/pkg/watch/versioned"
+	"github.com/OpenPlatformSDN/client-go/pkg/api/v1"
+	metav1 "github.com/OpenPlatformSDN/client-go/pkg/apis/meta/v1"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime"
+	"github.com/OpenPlatformSDN/client-go/pkg/runtime/schema"
+	versionedwatch "github.com/OpenPlatformSDN/client-go/pkg/watch/versioned"
 )
 
 // GroupName is the group name use in this package

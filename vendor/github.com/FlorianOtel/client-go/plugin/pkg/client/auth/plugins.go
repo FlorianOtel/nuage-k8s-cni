@@ -18,6 +18,6 @@ package auth
 
 import (
 	// Initialize all known client auth plugins.
-	_ "github.com/FlorianOtel/client-go/plugin/pkg/client/auth/gcp"
-	_ "github.com/FlorianOtel/client-go/plugin/pkg/client/auth/oidc"
+	_ "github.com/OpenPlatformSDN/client-go/plugin/pkg/client/auth/gcp"
+	_ "github.com/OpenPlatformSDN/client-go/plugin/pkg/client/auth/oidc"
 )
