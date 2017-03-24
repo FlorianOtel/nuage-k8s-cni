@@ -93,14 +93,17 @@ func PodDeleted(pod *apiv1.Pod) error {
 	// XXX - Since the bottom part of the plugin removes the VRS entity, the container may or may not be in the VSD at this time
 	// As such we pick up the container from the CNI Agent server running on pod's node
 
-	container, err := cniagent.ContainerGET(cniclient.AgentClient, pod.Spec.NodeName, cniclient.AgentServerPort, cName)
-	if err != nil {
+	var container *vsdclient.Container
+
+	if c, err := cniagent.ContainerGET(cniclient.AgentClient, pod.Spec.NodeName, cniclient.AgentServerPort, cName); err != nil {
 		glog.Errorf("Deleting K8S Pod: %s . Cannot fecth container: %s from CNI Agent server on host: %s. Error: %s", pod.ObjectMeta.Name, cName, pod.Spec.NodeName, err.Error())
 		return err
+	} else {
+		container = (*vsdclient.Container)(c)
 	}
 
 	// Get the IP address of the container
-	cIPv4Addr, cIPv4Mask := vsdclient.ContainerIPandMask(container)
+	cIPv4Addr, cIPv4Mask := container.IPandMask()
 	cifaddr := net.ParseIP(cIPv4Addr).To4()
 
 	// Get the subnet address for this IP address, as a string
@@ -160,7 +163,7 @@ func PodUpdated(old, updated *apiv1.Pod) error {
 		if container, exists := Pods[cName]; exists { // This pod is in the "Pods" cache, submitted at creation
 			// Post it to the CNI Agent server on the scheduled node and remove it from the cache
 			glog.Infof("K8S pod: %s. Scheduled to run on host: %s. Notifying CNI Agent server on that node...", old.ObjectMeta.Name, updated.Spec.NodeName)
-			if err := cniagent.ContainerPUT(cniclient.AgentClient, updated.Spec.NodeName, cniclient.AgentServerPort, container); err != nil {
+			if err := cniagent.ContainerPUT(cniclient.AgentClient, updated.Spec.NodeName, cniclient.AgentServerPort, (*vspk.Container)(container)); err != nil {
 				glog.Errorf("Updating K8S pod: %s. Failed to submit VSD container: %s to CNI Agent server on host: %s . Error: %s", old.ObjectMeta.Name, container.Name, updated.Spec.NodeName, err)
 				return err
 			}
@@ -181,34 +184,34 @@ func PodUpdated(old, updated *apiv1.Pod) error {
 //// XXX - The return *vspk.Container, in non-nil, _must_ contain a "vspk.ContainerInterface" properly configured
 
 // Case 1: Pod already has a VSD container associated with it (agent startup, previously existing pod)
-func case1create(pod *apiv1.Pod) (*vspk.Container, error) {
+func case1create(pod *apiv1.Pod) (*vsdclient.Container, error) {
 	// Do _NOT_ change those conventions -- the CNI agent relies on them.
 	// Container Name
 	cName := pod.ObjectMeta.Name + "_" + pod.ObjectMeta.Namespace
 	// Container UUID
 	cUUID := strings.Replace(string(pod.ObjectMeta.UID), "-", "", -1) + strings.Replace(string(pod.ObjectMeta.UID), "-", "", -1)
 
-	container, err := vsdclient.ExistsContainer(cName)
+	container := new(vsdclient.Container)
 
-	if err != nil {
+	if err := container.Exists(cName); err != nil {
 		return nil, bambou.NewBambouError("Error creating K8S Pod: "+pod.ObjectMeta.Name, err.Error())
 	}
 
-	if container != nil {
-		cIPv4Addr, cIPv4Mask := vsdclient.ContainerIPandMask(container)
+	if container.Name != "" { // Found it
+		cIPv4Addr, cIPv4Mask := container.IPandMask()
 		// XXX - No need to handle IPAM here. The container interface was allocated when we parsed the corresponding Subnet
 		cifaddr := net.IPNet{net.ParseIP(cIPv4Addr).To4(), net.IPMask(net.ParseIP(cIPv4Mask).To4())}
 		glog.Infof("Creating K8S pod: %s already created. VSD container details: Name: %s . UUID: %s . IP address: %s", pod.ObjectMeta.Name, container.Name, cUUID, cifaddr.String())
 
 		// XXX - At startup previously existing pods have a valid "pod.Spec.NodeName", so this error checking is a bit overkill
-		if err := cniagent.ContainerPUT(cniclient.AgentClient, pod.Spec.NodeName, cniclient.AgentServerPort, container); err == nil {
+		if err := cniagent.ContainerPUT(cniclient.AgentClient, pod.Spec.NodeName, cniclient.AgentServerPort, (*vspk.Container)(container)); err == nil {
 			glog.Infof("Creating K8S pod: %s . Successfully submitted VSD container: %s to CNI Agent server on host: %s", pod.ObjectMeta.Name, container.Name, pod.Spec.NodeName)
 		}
 
 		return container, nil
 	}
 
-	return nil, err
+	return nil, nil
 }
 
 //
@@ -219,7 +222,7 @@ func case1create(pod *apiv1.Pod) (*vspk.Container, error) {
 // "nuage.io/IPAddress = <ipaddr>"
 // "nuage.io/PolicyGroup=<pg>"
 // .....
-func case2create(pod *apiv1.Pod) (*vspk.Container, error) {
+func case2create(pod *apiv1.Pod) (*vsdclient.Container, error) {
 	// Do _NOT_ change those conventions -- the CNI agent relies on them.
 	// Container Name
 	cName := pod.ObjectMeta.Name + "_" + pod.ObjectMeta.Namespace
@@ -314,18 +317,19 @@ func case2create(pod *apiv1.Pod) (*vspk.Container, error) {
 	containerif := new(vspk.ContainerInterface)
 	//
 	containerif.MAC = vsdclient.GenerateMAC() // XXX - Do we allow / need custom MAC addresses ?
+	// containerif.Name = cName                  // XXX - This works only for single container interfaces
 	containerif.IPAddress = cifaddr.String()
 	containerif.Netmask = csubnet.Subnet.Netmask
 	containerif.AttachedNetworkID = csubnet.Subnet.ID
 	//
-	container := new(vspk.Container)
+	container := new(vsdclient.Container)
 	container.Name = cName
 	container.UUID = cUUID
 	container.OrchestrationID = k8sOrchestrationID
 	// XXX --vspk bug for vspk.Container: "vspk.Container.Intefaces" has to be "[]interface{}
 	container.Interfaces = []interface{}{containerif}
 
-	if err := vsdclient.CreateContainer(container); err != nil {
+	if err := container.Create(); err != nil {
 		//
 		// State cleanup - release the address, keep the subnet
 		csubnet.Range.Release(*cifaddr)
@@ -334,7 +338,7 @@ func case2create(pod *apiv1.Pod) (*vspk.Container, error) {
 
 	// XXX - For new pods, we do not know the pod node at creation time (empty). If so, just add it to the "Pods" cache of running pods
 	if pod.Spec.NodeName != "" { // Previously created pod, already scheduled on a node
-		err := cniagent.ContainerPUT(cniclient.AgentClient, pod.Spec.NodeName, cniclient.AgentServerPort, container)
+		err := cniagent.ContainerPUT(cniclient.AgentClient, pod.Spec.NodeName, cniclient.AgentServerPort, (*vspk.Container)(container))
 		if err != nil {
 			glog.Errorf("Creating K8S pod: %s. Failed to submit VSD container: %s to CNI Agent server on host: %s . Error: %s", pod.ObjectMeta.Name, container.Name, pod.Spec.NodeName, err)
 		}
@@ -350,7 +354,7 @@ func case2create(pod *apiv1.Pod) (*vspk.Container, error) {
 
 // Case 3: "Normal" pod --  Allocate an IP address from a non-custom subnet (subnet from ClusterCIDR address space).
 // Allocate a non-custom subnet if none exists previously  / no free IP address are available in any of previously exsting non-custom subnets
-func case3create(pod *apiv1.Pod) (*vspk.Container, error) {
+func case3create(pod *apiv1.Pod) (*vsdclient.Container, error) {
 	// Do _NOT_ change those conventions -- the CNI agent relies on them.
 	// Container Name
 	cName := pod.ObjectMeta.Name + "_" + pod.ObjectMeta.Namespace
@@ -400,7 +404,7 @@ func case3create(pod *apiv1.Pod) (*vspk.Container, error) {
 					continue
 				} else {
 					// Add the subnet to the VSD
-					if err := vsdclient.ZoneAddSubnet(podNsZone.Zone, newsubnet); err != nil {
+					if err := podNsZone.Zone.AddSubnet(newsubnet); err != nil {
 						// Release the IP address from the range
 						newsubnet.Range.Release(allocd)
 						continue
@@ -430,17 +434,18 @@ func case3create(pod *apiv1.Pod) (*vspk.Container, error) {
 	//
 	containerif.MAC = vsdclient.GenerateMAC()
 	containerif.IPAddress = cifaddr.String()
+	// containerif.Name = cName // XXX - This works only for single container interfaces
 	containerif.Netmask = csubnet.Subnet.Netmask
 	containerif.AttachedNetworkID = csubnet.Subnet.ID
 	//
-	container := new(vspk.Container)
+	container := new(vsdclient.Container)
 	container.Name = cName
 	container.UUID = cUUID
 	container.OrchestrationID = k8sOrchestrationID
 	// XXX --vspk bug for vspk.Container: "vspk.Container.Intefaces" has to be "[]interface{}
 	container.Interfaces = []interface{}{containerif}
 
-	if err := vsdclient.CreateContainer(container); err != nil {
+	if err := container.Create(); err != nil {
 		//
 		// State cleanup - release the address, keep the subnet
 		csubnet.Range.Release(*cifaddr)
@@ -450,7 +455,7 @@ func case3create(pod *apiv1.Pod) (*vspk.Container, error) {
 	// XXX - For new pods, we do not know the pod node at creation time (empty). If so, just add it to the "Pods" cache of running pods
 
 	if pod.Spec.NodeName != "" { // Previously created pod, already scheduled on a node
-		err := cniagent.ContainerPUT(cniclient.AgentClient, pod.Spec.NodeName, cniclient.AgentServerPort, container)
+		err := cniagent.ContainerPUT(cniclient.AgentClient, pod.Spec.NodeName, cniclient.AgentServerPort, (*vspk.Container)(container))
 		if err != nil {
 			glog.Errorf("Creating K8S pod: %s. Failed to submit VSD container: %s to CNI Agent server on host: %s . Error: %s", pod.ObjectMeta.Name, container.Name, pod.Spec.NodeName, err)
 		}

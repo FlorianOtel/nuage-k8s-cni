@@ -3,7 +3,6 @@ package vsd
 import (
 	"crypto/tls"
 	"encoding/binary"
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"math/rand"
@@ -11,8 +10,6 @@ import (
 	"strings"
 	"sync"
 	"time"
-
-	"k8s.io/kubernetes/pkg/registry/core/service/ipallocator"
 
 	yaml "gopkg.in/yaml.v2"
 
@@ -23,13 +20,6 @@ import (
 	"github.com/nuagenetworks/go-bambou/bambou"
 	"github.com/nuagenetworks/vspk-go/vspk"
 )
-
-// Wrapper around vspk.Subnet, with custom IPAM
-type Subnet struct {
-	*vspk.Subnet                    // VSD Subnet. 1-1 mapping (transparent)
-	Range        *ipallocator.Range // IPAM for this Subnet
-	Customed     bool               // If the net is part of ClusterCIDR or a customed network
-}
 
 const (
 	MAX_SUBNETS = 2048 // Practical, safety max limit on nr Subnets we handle (upper limit for 1<< SubnetLength)
@@ -55,9 +45,9 @@ var (
 	Domain     *vspk.Domain
 
 	//// XXX - VSD view of things. Must be reconciled with K8S data
-	Zones map[string]*vspk.Zone              // Key: ZONE_NAME + Name
-	NMGs  map[string]*vspk.NetworkMacroGroup // Key: NMG_NAME + Name
-	NMs   map[string]*vspk.EnterpriseNetwork // Key: NM_NAME + Name
+	Zones map[string]*Zone              // Key: ZONE_NAME + Name
+	NMGs  map[string]*NetworkMacroGroup // Key: NMG_NAME + Name
+	NMs   map[string]*NetworkMacro      // Key: NM_NAME + Name
 
 	vsdmutex sync.Mutex // Serialize VSD operations, esp creates/updates
 
@@ -131,9 +121,9 @@ func InitClient(conf *config.AgentConfig) error {
 
 	// Initialize local caches
 
-	Zones = make(map[string]*vspk.Zone)
-	NMGs = make(map[string]*vspk.NetworkMacroGroup)
-	NMs = make(map[string]*vspk.EnterpriseNetwork)
+	Zones = make(map[string]*Zone)
+	NMGs = make(map[string]*NetworkMacroGroup)
+	NMs = make(map[string]*NetworkMacro)
 
 	FreeCIDRs = make(map[string]*net.IPNet)
 
@@ -167,6 +157,8 @@ func GenerateMAC() string {
 ////
 //// TO DO: Refactor this in its own module, with those functions as methods.
 ////
+
+/*
 
 // NetworkMacro (Enterprise Network)
 func ExistsNM(name string) (*vspk.EnterpriseNetwork, error) {
@@ -207,6 +199,8 @@ func CreateNM(nm *vspk.EnterpriseNetwork) error {
 	glog.Infof("Successfully created Network Macro: %s", nm.Name)
 	return nil
 }
+
+
 
 // Network Macro Groups
 func ExistsNMG(name string) (*vspk.NetworkMacroGroup, error) {
@@ -429,6 +423,8 @@ func ContainerIPandMask(container *vspk.Container) (string, string) {
 	json.Unmarshal(data, &ciface)
 	return ciface.IPAddress, ciface.Netmask
 }
+
+*/
 
 /*
 

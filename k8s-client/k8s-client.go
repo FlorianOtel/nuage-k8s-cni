@@ -8,11 +8,10 @@ import (
 
 	"github.com/golang/glog"
 
+	"github.com/FlorianOtel/go-bambou/bambou"
 	"github.com/OpenPlatformSDN/client-go/kubernetes"
 	"github.com/OpenPlatformSDN/client-go/pkg/util/wait"
 	"github.com/OpenPlatformSDN/client-go/tools/clientcmd"
-	"github.com/FlorianOtel/go-bambou/bambou"
-	"github.com/nuagenetworks/vspk-go/vspk"
 )
 
 ////////
@@ -25,8 +24,8 @@ import (
 
 // A K8S namespace
 type namespace struct {
-	*vspk.Zone                    // The VSD Zone. 1-1 mapping (transparent)
-	Subnets    []vsdclient.Subnet // List of subnets associated with this namespace
+	*vsdclient.Zone                    // The VSD Zone. 1-1 mapping (transparent)
+	Subnets         []vsdclient.Subnet // List of subnets associated with this namespace
 }
 
 // The Orchestration ID used by the CNI Plugin to identify the platform (slightly different clients for different platforms)
@@ -51,7 +50,7 @@ var (
 	//// Pod cache -- pods currently processing
 	////
 
-	Pods map[string]*vspk.Container // Key: vspk.Container.Name == pod.ObjectMeta.Name + "_" + pod.ObjectMeta.Namespace
+	Pods map[string]*vsdclient.Container // Key: vspk.Container.Name == pod.ObjectMeta.Name + "_" + pod.ObjectMeta.Namespace
 
 	////
 	//// Services
@@ -102,7 +101,7 @@ func InitClient(conf *config.AgentConfig) error {
 	//// Initialize local state
 	////
 	Namespaces = make(map[string]namespace)
-	Pods = make(map[string]*vspk.Container)
+	Pods = make(map[string]*vsdclient.Container)
 	////
 	////
 	////
