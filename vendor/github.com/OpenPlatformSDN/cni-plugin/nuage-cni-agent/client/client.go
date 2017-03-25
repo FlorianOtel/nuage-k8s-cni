@@ -52,15 +52,16 @@ func ContainerPoll(client *http.Client, host, port, cname string) (*vspk.Contain
 
 // Get a given Container using container name
 func ContainerGET(client *http.Client, host, port, cname string) (*vspk.Container, error) {
+	container := vspk.Container{}
 	uri := "https://" + host + ":" + port + ContainerPath + cname
 	reply, err := agentGET(client, uri)
+
 	if err != nil {
 		glog.Errorf("--> Failed to GET data from CNI Agent server. Agent server URI: %s . Error: %s ", uri, err)
-	}
-
-	container := vspk.Container{}
-	if jsonerr := json.Unmarshal(reply, &container); jsonerr != nil {
-		return nil, fmt.Errorf("JSON decoding error: %s", jsonerr)
+	} else {
+		if jsonerr := json.Unmarshal(reply, &container); jsonerr != nil {
+			return nil, fmt.Errorf("JSON decoding error: %s", jsonerr)
+		}
 	}
 
 	return &container, err

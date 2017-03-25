@@ -11,13 +11,13 @@ import (
 // - "root" object
 // - valid "Enterprise" and "Domain" set
 
-func (nmg *NetworkMacroGroup) Exists(name string) error {
+func (nmg *NetworkMacroGroup) FetchByName() error {
 	vsdmutex.Lock()
 	defer vsdmutex.Unlock()
 
 	// First, check the local cache of VSD constructs. If it's there already, return it from the cache
-	if NMGs[name] != nil {
-		*nmg = *NMGs[name]
+	if NMGs[nmg.Name] != nil {
+		*nmg = *NMGs[nmg.Name]
 		glog.Infof("VSD Network Macro Group with name: %s is already cached", nmg.Name)
 		return nil
 	}
@@ -28,17 +28,17 @@ func (nmg *NetworkMacroGroup) Exists(name string) error {
 	// - VSD bug: VSD side filtering like fails for names NMGs for some reason (4.0r4)
 	// - As such we go client side filtering -- i.e. get all the list of NMGs and see if there's one for which the names match
 
-	// nmgs, err = Enterprise.NetworkMacroGroups(&bambou.FetchingInfo{Filter: "name == \"" + name + "\""})
+	// nmgs, err = Enterprise.NetworkMacroGroups(&bambou.FetchingInfo{Filter: "name == \"" + nmg.Name + "\""})
 
 	nmglist, err := Enterprise.NetworkMacroGroups(&bambou.FetchingInfo{})
 	if err != nil {
 		return bambou.NewBambouError("Error fetching list of Network Macro Groups from the VSD", err.Error())
 	}
 	for _, vsdnmg := range nmglist {
-		if vsdnmg.Name == name {
-			glog.Infof("VSD Network Macro Group with name: %s found on VSD, caching ...", name)
-			NMGs[name] = (*NetworkMacroGroup)(vsdnmg)
-			*nmg = *NMGs[name]
+		if vsdnmg.Name == nmg.Name {
+			glog.Infof("VSD Network Macro Group with name: %s found on VSD, caching ...", nmg.Name)
+			NMGs[nmg.Name] = (*NetworkMacroGroup)(vsdnmg)
+			*nmg = *NMGs[nmg.Name]
 			break
 		}
 	}

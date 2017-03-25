@@ -20,34 +20,34 @@ func ServiceCreated(svc *apiv1.Service) error {
 	////
 
 	nm := new(vsdclient.NetworkMacro)
+	nm.Name = vsdclient.NM_NAME + svc.ObjectMeta.Name
 
 	// First, check if NM exists
-	if err := nm.Exists(vsdclient.NM_NAME + svc.ObjectMeta.Name); err != nil {
+	if err := nm.FetchByName(); err != nil {
 		return bambou.NewBambouError("Error creating K8S service: "+svc.ObjectMeta.Name, err.Error())
 	}
 
-	if nm.Name == "" { // Couldn't find it
-		glog.Infof("Cannot find VSD Network Macro with name: %s, creating...", vsdclient.NM_NAME+svc.ObjectMeta.Name)
+	if nm.ID == "" { // Couldn't find it
+		glog.Infof("Cannot find VSD Network Macro with name: %s, creating...", nm.Name)
 
 		// Check if parent NMG (all services in same K8S namespace) exists
 		nmg := new(vsdclient.NetworkMacroGroup)
+		nmg.Name = vsdclient.NMG_NAME + svc.ObjectMeta.Namespace
 
-		if err := nmg.Exists(vsdclient.NMG_NAME + svc.ObjectMeta.Namespace); err != nil {
+		if err := nmg.FetchByName(); err != nil {
 			return bambou.NewBambouError("Error creating K8S service: "+svc.ObjectMeta.Name, err.Error())
 		}
 
-		if nmg.Name == "" {
-			glog.Infof("Cannot find a VSD Network Macro Group with name: %s, creating...", vsdclient.NMG_NAME+svc.ObjectMeta.Namespace)
+		if nmg.ID == "" {
+			glog.Infof("Cannot find a VSD Network Macro Group with name: %s, creating...", nmg.Name)
 			// Create it
-			nmg.Name = vsdclient.NMG_NAME + svc.ObjectMeta.Namespace
 			if err := nmg.Create(); err != nil {
 				return bambou.NewBambouError("Error creating K8S service: "+svc.ObjectMeta.Name, err.Error())
 			}
 		}
 
-		// Create a new NM under this NMG (prev existing or just created)
-		nm.Name = vsdclient.NM_NAME + svc.ObjectMeta.Name
-		//NM Address is the Service IP address. Netmask is "255.255.255.255"
+		// Create the NM under this NMG (prev existing or just created)
+		// Name was set above. Address is the Service IP address. Netmask is "255.255.255.255"
 		nm.Address = svc.Spec.ClusterIP
 		nm.Netmask = "255.255.255.255"
 		if err := nm.Create(); err != nil {

@@ -13,21 +13,21 @@ import (
 // - "root" object
 // - valid "Enterprise" and "Domain" set
 
-func (container *Container) Exists(name string) error {
+func (container *Container) FetchByName() error {
 	vsdmutex.Lock()
 	defer vsdmutex.Unlock()
 
 	// XXX - We are not locally caching pods (ephemeral constructs)
 
 	// Check the VSD. If it's there, update the local cache and return it
-	containerlist, err := Domain.Containers(&bambou.FetchingInfo{Filter: "name == \"" + name + "\""})
+	containerlist, err := Domain.Containers(&bambou.FetchingInfo{Filter: "name == \"" + container.Name + "\""})
 
 	if err != nil {
-		return bambou.NewBambouError("Cannot fetch Container with name: "+name, err.Error())
+		return bambou.NewBambouError("Cannot fetch Container with name: "+container.Name, err.Error())
 	}
 
 	if len(containerlist) == 1 {
-		glog.Infof("Container with name: %s found on VSD", name)
+		glog.Infof("Container with name: %s found on VSD", container.Name)
 		*container = (Container)(*containerlist[0])
 	}
 
@@ -75,3 +75,5 @@ func (container *Container) IPandMask() (string, string) {
 	json.Unmarshal(data, &ciface)
 	return ciface.IPAddress, ciface.Netmask
 }
+
+//

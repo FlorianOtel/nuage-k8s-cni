@@ -15,28 +15,28 @@ import (
 // - "root" object
 // - valid "Enterprise" and "Domain" set
 
-func (zone *Zone) Exists(name string) error {
+func (zone *Zone) FetchByName() error {
 	vsdmutex.Lock()
 	defer vsdmutex.Unlock()
 
 	// First, check the local cache of VSD constructs. If it's there already, return it from the cache
-	if Zones[name] != nil {
-		*zone = *Zones[name]
+	if Zones[zone.Name] != nil {
+		*zone = *Zones[zone.Name]
 		glog.Infof("VSD Zone with name: %s already cached", zone.Name)
 		return nil
 	}
 
 	// Second, check the VSD. If it's there, update the local cache and return it
-	zonelist, err := Domain.Zones(&bambou.FetchingInfo{Filter: "name == \"" + name + "\""})
+	zonelist, err := Domain.Zones(&bambou.FetchingInfo{Filter: "name == \"" + zone.Name + "\""})
 
 	if err != nil {
-		return bambou.NewBambouError("Cannot fetch Zone: "+name, err.Error())
+		return bambou.NewBambouError("Cannot fetch Zone: "+zone.Name, err.Error())
 	}
 
 	if len(zonelist) == 1 {
-		glog.Infof("Zone with name: %s found on VSD, caching ...", name)
-		Zones[name] = (*Zone)(zonelist[0])
-		*zone = *Zones[name]
+		glog.Infof("Zone with name: %s found on VSD, caching ...", zone.Name)
+		Zones[zone.Name] = (*Zone)(zonelist[0])
+		*zone = *Zones[zone.Name]
 	}
 
 	return nil
@@ -95,7 +95,7 @@ func (zone *Zone) Subnets() ([]Subnet, error) {
 		// - No clean way of getting all the endpoints with an IP address in this subnet
 
 		cifaces, _ := s.ContainerInterfaces(&bambou.FetchingInfo{})
-		glog.Infof("Found: %d container interfaces in subnet range: %s . Reserving subnet address range...", len(cifaces), scidr.String())
+		glog.Infof("Found: %d container interfaces in subnet range: %s . Reserving their respective IP addresses..", len(cifaces), scidr.String())
 
 		for _, cif := range cifaces {
 			if err := subnet.Range.Allocate(net.ParseIP(cif.IPAddress).To4()); err != nil {

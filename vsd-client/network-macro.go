@@ -12,27 +12,27 @@ import (
 // - valid "Enterprise" and "Domain" set
 
 // NetworkMacro (Enterprise Network). Mutates the receiver if it exists
-func (nm *NetworkMacro) Exists(name string) error {
+func (nm *NetworkMacro) FetchByName() error {
 	vsdmutex.Lock()
 	defer vsdmutex.Unlock()
 
 	// First, check the local cache of VSD constructs. If it's there already, return it from the cache
-	if NMs[name] != nil {
-		*nm = *NMs[name]
+	if NMs[nm.Name] != nil {
+		*nm = *NMs[nm.Name]
 		glog.Infof("VSD Network Macro with name: %s already cached", nm.Name)
 		return nil
 	}
 
 	// Second, check the VSD. If it's there, update the local cache and return it
-	nmlist, err := Enterprise.EnterpriseNetworks(&bambou.FetchingInfo{Filter: "name == \"" + name + "\""})
+	nmlist, err := Enterprise.EnterpriseNetworks(&bambou.FetchingInfo{Filter: "name == \"" + nm.Name + "\""})
 	if err != nil {
 		return bambou.NewBambouError("Error fetching list of Network Macros from the VSD", err.Error())
 	}
 
 	if len(nmlist) == 1 {
-		glog.Infof("VSD Network Macro with name: %s found on VSD, caching ...", name)
-		NMs[name] = (*NetworkMacro)(nmlist[0])
-		*nm = *NMs[name]
+		glog.Infof("VSD Network Macro with name: %s found on VSD, caching ...", nm.Name)
+		NMs[nm.Name] = (*NetworkMacro)(nmlist[0])
+		*nm = *NMs[nm.Name]
 	}
 
 	return nil

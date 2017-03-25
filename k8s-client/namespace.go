@@ -17,15 +17,15 @@ import (
 func NamespaceCreated(ns *apiv1.Namespace) error {
 
 	zone := new(vsdclient.Zone)
+	zone.Name = vsdclient.ZONE_NAME + ns.ObjectMeta.Name
 
 	// Chceck if we still have a VSD zone with this name (cached from previous instances of the agent )
-	if err := zone.Exists(vsdclient.ZONE_NAME + ns.ObjectMeta.Name); err != nil {
+	if err := zone.FetchByName(); err != nil {
 		return bambou.NewBambouError("Error creating K8S namespace: "+ns.ObjectMeta.Name, err.Error())
 	}
 
-	if zone.Name == "" { // Zone does not exist, create it
-		glog.Infof("Cannot find VSD Zone with name: %s, creating...", vsdclient.ZONE_NAME+ns.ObjectMeta.Name)
-		zone.Name = vsdclient.ZONE_NAME + ns.ObjectMeta.Name
+	if zone.ID == "" { // Zone does not exist, create it
+		glog.Infof("Cannot find VSD Zone with name: %s, creating...", zone.Name)
 		if err := zone.Create(); err != nil {
 			return err
 		}
