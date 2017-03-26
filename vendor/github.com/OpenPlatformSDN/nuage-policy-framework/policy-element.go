@@ -228,11 +228,28 @@ func (pe *PolicyElement) MapToIngressACLEntry() (*vspk.IngressACLEntryTemplate, 
 		vsdorg := new(vspk.Enterprise)
 		vsdorg.ID = vsdd.ParentID
 		vsdorg.Fetch()
-		nmgl, _ := vsdorg.NetworkMacroGroups(&bambou.FetchingInfo{Filter: "name == \"" + *pe.To.Name + "\""})
-		if len(nmgl) != 1 {
+		// XXX - VSD side filtering for NMGs is currently (4.0r4) buggy for long NMG names. That is why we do client side filtering.
+
+		/*
+			nmgl, _ := vsdorg.NetworkMacroGroups(&bambou.FetchingInfo{Filter: "name == \"" + *pe.To.Name + "\""})
+			if len(nmgl) != 1 {
+				return nil, bambou.NewBambouError(ErrorPEInvalid+pe.Name, "'to' field, cannot find NetworkMacroGroup with name: "+*pe.To.Name)
+			}
+			iaclentry.NetworkID = nmgl[0].ID
+		*/
+
+		nmgl, _ := vsdorg.NetworkMacroGroups(&bambou.FetchingInfo{})
+		for _, nmg := range nmgl {
+			if nmg.Name == *pe.To.Name { // found it
+				iaclentry.NetworkID = nmg.ID
+				break
+			}
+		}
+
+		if iaclentry.NetworkID == "" { // Not Found
 			return nil, bambou.NewBambouError(ErrorPEInvalid+pe.Name, "'to' field, cannot find NetworkMacroGroup with name: "+*pe.To.Name)
 		}
-		iaclentry.NetworkID = nmgl[0].ID
+
 	case NetworkMacro:
 		// XXX - We can only list Enterprise Networks (Network Macros) for an Enterprise.
 		vsdorg := new(vspk.Enterprise)

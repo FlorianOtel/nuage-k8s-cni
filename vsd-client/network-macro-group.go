@@ -5,6 +5,8 @@ import (
 
 	"github.com/nuagenetworks/go-bambou/bambou"
 	"github.com/nuagenetworks/vspk-go/vspk"
+
+	netpolicy "github.com/OpenPlatformSDN/nuage-policy-framework"
 )
 
 // XXX -- All those methods rely on a configured VSD connection:
@@ -74,4 +76,34 @@ func (nmg *NetworkMacroGroup) AddNM(nm *NetworkMacro) error {
 
 	glog.Infof("Successfully added Network Macro: %s to Network Macro Group: %s", nm.Name, nmg.Name)
 	return nil
+}
+
+////////
+//////// Policy functions:  All functions are done at network ingress, assuming "IngressPolicy" as an applied policy
+////////
+////////
+////////
+
+// Adds a Policy Element:
+// - From: Pods in current namesspace (VSD zone)
+// - To: Services in own namespace (VSD NMG)
+// - Action: Allow
+// - Priority: 900000
+func (nmg *NetworkMacroGroup) AddPESvcsAllow(zone *Zone) error {
+	aazone2nmg := netpolicy.PolicyElement{
+		Name:     "Allow traffic to " + nmg.Name,
+		Priority: 900000,
+		From: netpolicy.PolicySrcScope{
+			Type: "Zone",
+			Name: &zone.Name,
+		},
+		To: netpolicy.PolicyDstScope{
+			Type: "NetworkMacroGroup",
+			Name: &nmg.Name,
+		},
+		TrafficSpec: netpolicy.MatchAllTraffic,
+		Action:      netpolicy.Allow,
+	}
+
+	return IngressPolicy.ApplyPE(&aazone2nmg)
 }
