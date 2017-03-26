@@ -17,6 +17,8 @@ import (
 
 	"github.com/OpenPlatformSDN/nuage-k8s-cni/config"
 
+	netpolicy "github.com/OpenPlatformSDN/nuage-policy-framework"
+
 	"github.com/nuagenetworks/go-bambou/bambou"
 	"github.com/nuagenetworks/vspk-go/vspk"
 )
@@ -43,6 +45,10 @@ var (
 	// Nuage Enterprise and Domain for this K8S cluster. Created if they don't exist already
 	Enterprise *vspk.Enterprise
 	Domain     *vspk.Domain
+
+	// Network Policies
+	egressPolicy  *netpolicy.Policy // Private, low priority "allow all" traffic for network egress
+	IngressPolicy *netpolicy.Policy // Actual policy rules are imposed on network ingress
 
 	//// XXX - VSD view of things. Must be reconciled with K8S data
 	Zones map[string]*Zone              // Key: ZONE_NAME + Name
@@ -132,6 +138,67 @@ func InitClient(conf *config.AgentConfig) error {
 
 	if err := initCIDRs(conf); err != nil {
 		return err
+	}
+
+	// Initialize Ingress and Egress Network Policies
+	// XXX - Egress policy is a simple, low-priority "Allow all traffic". Actual Policy rules are imposed on Ingress
+
+	// Policy names for egress / ingress
+	epname := "Egress Policy for K8S"
+	ipname := "Ingress Policy for K8S"
+
+	policies, perr := (*netpolicy.PolicyDomain)(Domain).GetPolicies()
+
+	if perr != nil {
+		return perr
+	}
+
+	for _, policy := range policies {
+		if epname == policy.Name && policy.Type == netpolicy.Egress {
+			egressPolicy = policy
+			glog.Infof("The domain already has an existing %s: %s", epname, egressPolicy)
+			break
+		}
+	}
+
+	if egressPolicy == nil { // Not found above
+		egressPolicy, _ := netpolicy.NewPolicy(epname, netpolicy.Egress, Enterprise.Name, Domain.Name, 999999999)
+		// Create a Policy Element allowing all egress traffic
+		aaegressPE := netpolicy.AllowAllEgressPE
+		egressPolicy.AttachPE(&aaegressPE)
+		if err := (*netpolicy.PolicyDomain)(Domain).ApplyPolicy(egressPolicy); err != nil {
+			return err
+		}
+		glog.Infof("Successfully applied Egress Policy: %s", *egressPolicy)
+	}
+
+	// Ingress -- Basic is a lowest priority "allow traffic to endpoint Zone" <--> allow traffic btw. pods in the same namespace
+
+	for _, policy := range policies {
+		if ipname == policy.Name && policy.Type == netpolicy.Ingress {
+			IngressPolicy = policy
+			glog.Infof("The domain already has an existing %s: %s", ipname, IngressPolicy)
+			break
+		}
+	}
+
+	if IngressPolicy == nil { // Not found above
+		IngressPolicy, _ = netpolicy.NewPolicy(ipname, netpolicy.Ingress, Enterprise.Name, Domain.Name, 999999999)
+		// Create a PolicyElement allowing ingress traffic to endpoint's own Zone
+		aaizone := netpolicy.PolicyElement{
+			Name:        "Allow intra-namespace traffic",
+			Priority:    999999999,
+			From:        netpolicy.AllSrcsIngress,
+			To:          netpolicy.PolicyDstScope{Type: string(netpolicy.MyZone)},
+			TrafficSpec: netpolicy.MatchAllTraffic,
+			Action:      netpolicy.Allow,
+		}
+		IngressPolicy.AttachPE(&aaizone)
+		if err := (*netpolicy.PolicyDomain)(Domain).ApplyPolicy(IngressPolicy); err != nil {
+			return err
+		}
+		glog.Infof("Successfully applied Ingress Policy: %s", *IngressPolicy)
+
 	}
 
 	glog.Info("VSD client initialization completed")

@@ -717,6 +717,12 @@
 			"revisionTime": "2017-03-17T07:38:51Z"
 		},
 		{
+			"checksumSHA1": "NIkpXjXDx1VMnO/KOwyIp7Omafs=",
+			"path": "github.com/OpenPlatformSDN/nuage-policy-framework",
+			"revision": "d3fae91a151cf0e976da75da5efdd55799428922",
+			"revisionTime": "2017-03-21T12:39:11Z"
+		},
+		{
 			"checksumSHA1": "9Ob5JNGzi/pGXYMuHclig69IHPk=",
 			"path": "github.com/PuerkitoBio/purell",
 			"revision": "8a290539e2e8629dbc4e6bad948158f790ec31f4",
